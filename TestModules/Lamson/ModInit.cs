@@ -19,8 +19,8 @@ namespace Lamson
 
         public void Loaded(InitspaceModel conf)
         {
-			KinoGram = ModuleInvoke.Init("KinoGram", new OnlinesSettings("KinoGram", "kinogram.com", streamproxy: true));
-			PornGram = ModuleInvoke.Init("PornGram", new SisiSettings("PornGram", "porngram.com"));
+            KinoGram = ModuleInvoke.Init("KinoGram", new OnlinesSettings("KinoGram", "kinogram.com", streamproxy: true));
+            PornGram = ModuleInvoke.Init("PornGram", new SisiSettings("PornGram", "porngram.com"));
 
             ThreadPool.QueueUserWorkItem(async _ =>
             {
@@ -29,13 +29,13 @@ namespace Lamson
             });
 
 
-            var timer = new System.Timers.Timer(TimeSpan.FromMinutes(1).TotalMilliseconds) 
+            var timer = new System.Timers.Timer(TimeSpan.FromMinutes(1).TotalMilliseconds)
             {
                 AutoReset = true,
                 Enabled = true
             };
 
-            timer.Elapsed += async (s, e) => 
+            timer.Elapsed += async (s, e) =>
             {
                 // cron
                 await Task.Delay(1000);

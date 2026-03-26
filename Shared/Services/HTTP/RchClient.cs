@@ -95,7 +95,7 @@ namespace Shared.Services
 
         public string ipkey(string key, ProxyManager proxy) => $"{key}:{(enableRhub ? ip : proxy?.CurrentProxyIp)}";
 
-        public RchClient(string connectionId) 
+        public RchClient(string connectionId)
         {
             this.connectionId = connectionId;
         }
@@ -144,7 +144,7 @@ namespace Shared.Services
         #region Eval
         public void EvalRun(string data)
         {
-            _= SendHub("evalrun", data).ConfigureAwait(false);
+            _ = SendHub("evalrun", data).ConfigureAwait(false);
         }
 
         public Task<string> Eval(string data)
@@ -301,7 +301,7 @@ namespace Shared.Services
         #endregion
 
         #region Post
-        public Task<string> Post(string url, string data, List<HeadersModel> headers = null, bool useDefaultHeaders = true) 
+        public Task<string> Post(string url, string data, List<HeadersModel> headers = null, bool useDefaultHeaders = true)
         {
             return SendHub(url, data, headers, useDefaultHeaders);
         }
@@ -379,7 +379,7 @@ namespace Shared.Services
             {
                 cts = new CancellationTokenSource(TimeSpan.FromSeconds(20));
             }
-            
+
             try
             {
                 var rchHub = rchIds.GetOrAdd(rchId, _ => new rchIdEntry(ms, new TaskCompletionSource<string>(), cts.Token));
@@ -565,7 +565,8 @@ namespace Shared.Services
             // разрешен возврат на сервер
             if (rhub_fallback)
             {
-                if (rch_deny.Contains(info.rchtype)) {
+                if (rch_deny.Contains(info.rchtype))
+                {
                     enableRhub = false;
                     init.rhub = false;
                 }

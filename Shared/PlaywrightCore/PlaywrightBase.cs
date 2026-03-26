@@ -77,7 +77,7 @@ namespace Shared.PlaywrightCore
                 Console.WriteLine("Playwright: Initialization");
                 return true;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Serilog.Log.Error(ex, "CatchId={CatchId}", "id_422c14f9");
                 Console.WriteLine($"Playwright: {ex.Message}");

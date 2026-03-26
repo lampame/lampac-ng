@@ -40,7 +40,7 @@ namespace Shared.Services
                 {
                     try
                     {
-                        cache.TryAdd(file.Name, new CacheFileModel() 
+                        cache.TryAdd(file.Name, new CacheFileModel()
                         {
                             FullPath = file.FullName,
                             Length = (int)file.Length,
@@ -63,7 +63,7 @@ namespace Shared.Services
 
             ThreadPool.QueueUserWorkItem(async _ =>
             {
-                while(!Startup.IsShutdown)
+                while (!Startup.IsShutdown)
                 {
                     try
                     {
@@ -134,7 +134,7 @@ namespace Shared.Services
                     LastWriteTimeUtc = File.GetLastWriteTimeUtc(outFile)
                 };
 
-                cache.AddOrUpdate(md5key, md, (k,v) => md);
+                cache.AddOrUpdate(md5key, md, (k, v) => md);
 
                 return true;
             }
@@ -172,7 +172,7 @@ namespace Shared.Services
                     LastWriteTimeUtc = File.GetLastWriteTimeUtc(outFile)
                 };
 
-                cache.AddOrUpdate(md5key, md, (k,v) => md);
+                cache.AddOrUpdate(md5key, md, (k, v) => md);
 
                 return true;
             }

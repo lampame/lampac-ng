@@ -110,7 +110,7 @@ namespace Core
             #region RchClient
             if (mods.nws)
             {
-                RchClient.hub += (e, req) 
+                RchClient.hub += (e, req)
                     => _ = NativeWebSocket.SendRchRequestAsync(req.connectionId, req.rchId, req.url, req.data, req.headers, req.returnHeaders).ConfigureAwait(false);
             }
             #endregion
@@ -179,7 +179,7 @@ namespace Core
             #endregion
 
             #region cloudflare_ips
-            ThreadPool.QueueUserWorkItem(async _ => 
+            ThreadPool.QueueUserWorkItem(async _ =>
             {
                 string ips = await Http.Get("https://www.cloudflare.com/ips-v4");
                 if (ips == null || !ips.Contains("173.245."))

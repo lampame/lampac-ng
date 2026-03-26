@@ -56,8 +56,10 @@ namespace Online
         {
             conf = ModuleInvoke.Init("online", new ModuleConf()
             {
-                findkp = "all", checkOnlineSearch = true,
-                spider = true, spiderName = "Spider",
+                findkp = "all",
+                checkOnlineSearch = true,
+                spider = true,
+                spiderName = "Spider",
                 component = "lampac",
                 name = CoreInit.conf.online.name,
                 description = "Плагин для просмотра онлайн сериалов и фильмов",
@@ -75,7 +77,8 @@ namespace Online
             PidTor = ModuleInvoke.Init("PidTor", new PidTorSettings()
             {
                 enable = true,
-                min_sid = 15, emptyVoice = true,
+                min_sid = 15,
+                emptyVoice = true,
                 redapi = "http://ns3bg91xvuqfvq9h.cfhttp.top"
             });
 

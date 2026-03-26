@@ -215,7 +215,7 @@ namespace LampaWeb.Controllers
 
                 file = bulder.ToString();
 
-                if (EventListener.AppReplace != null) 
+                if (EventListener.AppReplace != null)
                     file = EventListener.AppReplace.Invoke("appjs", new EventAppReplace(file, null, type, host, requestInfo, HttpContext.Request, hybridCache));
 
                 memoryCache.Set(memKey, file, DateTime.Now.AddMinutes(5));

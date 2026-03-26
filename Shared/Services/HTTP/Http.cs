@@ -209,7 +209,7 @@ namespace Shared.Services
 
             var result = new Dictionary<string, T>(raw.Count, StringComparer.Ordinal);
 
-            foreach (var kv in raw) 
+            foreach (var kv in raw)
                 result[NormalizeHeaderName(kv.Key)] = kv.Value;
 
             return result;
@@ -320,8 +320,8 @@ namespace Shared.Services
                 DefaultRequestHeaders(url, req, null, null, headers);
 
                 using (var cts = new CancellationTokenSource(TimeSpan.FromSeconds(Math.Max(5, timeoutSeconds))))
-                    using (HttpResponseMessage response = await client.SendAsync(req, HttpCompletionOption.ResponseHeadersRead, cts.Token).ConfigureAwait(false))
-                        return response;
+                using (HttpResponseMessage response = await client.SendAsync(req, HttpCompletionOption.ResponseHeadersRead, cts.Token).ConfigureAwait(false))
+                    return response;
             }
             catch
             {
@@ -335,7 +335,7 @@ namespace Shared.Services
         async public static Task<T> Get<T>(string url, string cookie = null, string referer = null, long MaxResponseContentBufferSize = 0, int timeoutSeconds = 15, List<HeadersModel> headers = null, bool IgnoreDeserializeObject = false, WebProxy proxy = null, bool statusCodeOK = true, int httpversion = 1, CookieContainer cookieContainer = null, bool useDefaultHeaders = true, HttpContent body = null, HttpClient httpClient = null, bool textJson = false)
         {
             return (await BaseGetAsync<T>(
-                url, cookie, referer, MaxResponseContentBufferSize, timeoutSeconds, headers, IgnoreDeserializeObject, proxy,statusCodeOK, httpversion, cookieContainer, useDefaultHeaders, body, httpClient, textJson
+                url, cookie, referer, MaxResponseContentBufferSize, timeoutSeconds, headers, IgnoreDeserializeObject, proxy, statusCodeOK, httpversion, cookieContainer, useDefaultHeaders, body, httpClient, textJson
             ).ConfigureAwait(false)).content;
         }
         #endregion
@@ -668,7 +668,7 @@ namespace Shared.Services
         #region Post
         public static Task<string> Post(string url, string data, string cookie = null, int MaxResponseContentBufferSize = 0, int timeoutSeconds = 15, List<HeadersModel> headers = null, WebProxy proxy = null, int httpversion = 1, CookieContainer cookieContainer = null, bool useDefaultHeaders = true, bool removeContentType = false, Encoding encoding = default, bool statusCodeOK = true, HttpClient httpClient = null)
         {
-            return Post(url, new StringContent(data, Encoding.UTF8, "application/x-www-form-urlencoded"), 
+            return Post(url, new StringContent(data, Encoding.UTF8, "application/x-www-form-urlencoded"),
                 encoding, cookie, MaxResponseContentBufferSize, timeoutSeconds, headers, proxy, httpversion, cookieContainer, useDefaultHeaders, removeContentType, statusCodeOK, httpClient
             );
         }

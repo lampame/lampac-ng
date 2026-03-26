@@ -16,7 +16,7 @@ namespace Shared.Services
 
         static FriendlyHttp()
         {
-            ThreadPool.QueueUserWorkItem(async _ => 
+            ThreadPool.QueueUserWorkItem(async _ =>
             {
                 while (true)
                 {
@@ -30,10 +30,10 @@ namespace Shared.Services
                         {
                             try
                             {
-                                if (DateTime.UtcNow > client.Value.lifetime && 
+                                if (DateTime.UtcNow > client.Value.lifetime &&
                                     _clients.TryRemove(client.Key, out var _c))
                                 {
-                                    _= Task.Delay(TimeSpan.FromSeconds(20))
+                                    _ = Task.Delay(TimeSpan.FromSeconds(20))
                                         .ContinueWith(e => _c.http.Dispose())
                                         .ConfigureAwait(false);
                                 }
@@ -69,7 +69,7 @@ namespace Shared.Services
             }
 
             var webProxy = handler?.Proxy != null
-                ? handler.Proxy as WebProxy 
+                ? handler.Proxy as WebProxy
                 : null;
 
             if (webProxy == null)
@@ -103,7 +103,7 @@ namespace Shared.Services
                 password = credentials.Password;
             }
 
-            return _clients.GetOrAdd($"{ip}:{port}:{username}:{password}:{maxBufferSize}:{handler?.AllowAutoRedirect}", k => 
+            return _clients.GetOrAdd($"{ip}:{port}:{username}:{password}:{maxBufferSize}:{handler?.AllowAutoRedirect}", k =>
             {
                 var client = new HttpClient(handler);
                 client.MaxResponseContentBufferSize = maxBufferSize;

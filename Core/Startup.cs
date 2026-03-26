@@ -215,7 +215,8 @@ namespace Core
 
             IMvcBuilder mvcBuilder = services.AddControllersWithViews();
 
-            mvcBuilder.AddJsonOptions(options => {
+            mvcBuilder.AddJsonOptions(options =>
+            {
                 //options.JsonSerializerOptions.IgnoreNullValues = true;
                 options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
             });

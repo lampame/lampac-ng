@@ -145,11 +145,11 @@ namespace Shared.PlaywrightCore
                     keepopen_context = kpc;
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Serilog.Log.Error(ex, "CatchId={CatchId}", "id_63f456ad");
                 Status = PlaywrightStatus.disabled;
-                Console.WriteLine($"Chromium: {ex.Message}"); 
+                Console.WriteLine($"Chromium: {ex.Message}");
             }
         }
         #endregion
@@ -212,7 +212,7 @@ namespace Shared.PlaywrightCore
                             {
                                 if (pages_keepopen.TryRemove(k, out _))
                                 {
-                                    _= Task.Delay(TimeSpan.FromSeconds(20))
+                                    _ = Task.Delay(TimeSpan.FromSeconds(20))
                                         .ContinueWith(t => k.context.CloseAsync())
                                         .ConfigureAwait(false);
                                 }

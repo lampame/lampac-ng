@@ -98,8 +98,8 @@ namespace Shared.Services
         #region JsonHeaders / IsRchEnable
         List<HeadersModel> JsonHeaders(List<HeadersModel> addheaders = null, List<HeadersModel> newheaders = null)
         {
-            if ((addheaders == null || addheaders.Count == 0) && 
-                (newheaders == null || newheaders.Count == 0) && 
+            if ((addheaders == null || addheaders.Count == 0) &&
+                (newheaders == null || newheaders.Count == 0) &&
                 (baseHeaders == null || baseHeaders.Count == 0))
                 return null;
 

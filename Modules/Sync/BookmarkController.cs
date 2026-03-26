@@ -143,7 +143,7 @@ namespace Sync.Controllers
                         Save(sqlDb, entity, data);
                     }
                 }
-                catch 
+                catch
                 {
                     return JsonFailure();
                 }
@@ -188,7 +188,7 @@ namespace Sync.Controllers
             try
             {
                 bool _acquired = await semaphore.WaitAsync();
-                if (!_acquired) 
+                if (!_acquired)
                     return JsonFailure();
 
                 using (var sqlDb = SqlContext.Create())
@@ -231,7 +231,7 @@ namespace Sync.Controllers
 
                 return JsonSuccess();
             }
-            catch 
+            catch
             {
                 return JsonFailure();
             }
@@ -260,7 +260,7 @@ namespace Sync.Controllers
             try
             {
                 bool _acquired = await semaphore.WaitAsync();
-                if (!_acquired) 
+                if (!_acquired)
                     return JsonFailure();
 
                 using (var sqlDb = SqlContext.Create())
@@ -307,7 +307,7 @@ namespace Sync.Controllers
 
                 return JsonSuccess();
             }
-            catch 
+            catch
             {
                 return JsonFailure();
             }

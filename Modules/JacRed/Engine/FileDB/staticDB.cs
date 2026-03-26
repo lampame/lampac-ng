@@ -111,7 +111,7 @@ namespace JacRed.Engine
                         .Select(i => i.Key)
                         .ToArray();
 
-                    foreach (string key in deleteKeys) 
+                    foreach (string key in deleteKeys)
                         openWriteTask.TryRemove(key, out _);
                 }
                 catch (System.Exception ex)

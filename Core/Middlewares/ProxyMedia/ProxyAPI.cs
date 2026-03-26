@@ -34,7 +34,7 @@ namespace Core.Middlewares
 
         static CacheFileWatcher fileWatcher;
 
-        public static int Stat_ContCacheFiles 
+        public static int Stat_ContCacheFiles
             => fileWatcher.FilesCount;
 
         public static void Initialization()
@@ -60,7 +60,7 @@ namespace Core.Middlewares
             var requestInfo = httpContext.Features.Get<RequestModel>();
             bool Isdash = httpContext.Request.Path.Value.StartsWith("/proxy-dash/", StringComparison.OrdinalIgnoreCase);
 
-            string servPath = Isdash 
+            string servPath = Isdash
                 ? httpContext.Request.Path.Value.Replace("/proxy-dash/", "", StringComparison.OrdinalIgnoreCase)
                 : httpContext.Request.Path.Value.Replace("/proxy/", "", StringComparison.OrdinalIgnoreCase);
 

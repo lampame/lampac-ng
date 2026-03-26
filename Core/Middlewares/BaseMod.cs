@@ -45,7 +45,7 @@ namespace Core.Middlewares
 
             if (!IsValidPath(context.Request.Path.Value))
             {
-                context.Response.StatusCode = 400; 
+                context.Response.StatusCode = 400;
                 return Task.CompletedTask;
             }
 

@@ -61,7 +61,7 @@ namespace Sync.Controllers
         #region Set
         [HttpPost]
         [Route("/storage/set")]
-        async public Task<ActionResult> Set([FromQuery]string path, [FromQuery]string pathfile, [FromQuery]string connectionId)
+        async public Task<ActionResult> Set([FromQuery] string path, [FromQuery] string pathfile, [FromQuery] string connectionId)
         {
             if (HttpContext.Request.ContentLength > maxRequestSize)
                 return ContentTo("{\"success\": false, \"msg\": \"max_size\"}");
@@ -134,8 +134,8 @@ namespace Sync.Controllers
 
             var inf = new FileInfo(outFile);
 
-            return Json(new 
-            { 
+            return Json(new
+            {
                 success = true,
                 uid = requestInfo.user_uid,
                 fileInfo = new { inf.Name, path = outFile, inf.Length, changeTime = new DateTimeOffset(inf.LastWriteTimeUtc).ToUnixTimeMilliseconds() }
@@ -165,7 +165,7 @@ namespace Sync.Controllers
 
             try
             {
-                bool  _acquired = await semaphore.WaitAsync();
+                bool _acquired = await semaphore.WaitAsync();
                 if (!_acquired)
                 {
                     HttpContext.Response.StatusCode = 502;

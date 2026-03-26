@@ -115,11 +115,11 @@ namespace Shared.PlaywrightCore
 
                 browser.Disconnected += Browser_Disconnected;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Serilog.Log.Error(ex, "CatchId={CatchId}", "id_ebd0dcdd");
                 Status = PlaywrightStatus.disabled;
-                Console.WriteLine($"Firefox: {ex.Message}"); 
+                Console.WriteLine($"Firefox: {ex.Message}");
             }
         }
 
@@ -268,8 +268,8 @@ namespace Shared.PlaywrightCore
 
                     var contextOptions = new BrowserNewContextOptions
                     {
-                        Proxy = new Proxy 
-                        { 
+                        Proxy = new Proxy
+                        {
                             Server = proxy.ip,
                             Bypass = "127.0.0.1",
                             Username = proxy.username,

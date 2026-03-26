@@ -40,31 +40,31 @@ namespace Sync
             switch (e.method?.ToLowerInvariant())
             {
                 case "registryevent":
-                {
-                    string uid = GetStringArg(e.args, 0);
-                    if (!string.IsNullOrEmpty(uid))
-                        eventClients.AddOrUpdate(e.connectionId, uid, (_, __) => uid);
-                    break;
-                }
+                    {
+                        string uid = GetStringArg(e.args, 0);
+                        if (!string.IsNullOrEmpty(uid))
+                            eventClients.AddOrUpdate(e.connectionId, uid, (_, __) => uid);
+                        break;
+                    }
 
                 case "events":
-                {
-                    string uid = GetStringArg(e.args, 0);
-                    string name = GetStringArg(e.args, 1);
-                    string data = GetStringArg(e.args, 2);
-                    _ = PublishAsync(e.connectionId, uid, name, data);
-                    break;
-                }
+                    {
+                        string uid = GetStringArg(e.args, 0);
+                        string name = GetStringArg(e.args, 1);
+                        string data = GetStringArg(e.args, 2);
+                        _ = PublishAsync(e.connectionId, uid, name, data);
+                        break;
+                    }
 
                 case "eventsid":
-                {
-                    string targetConnection = GetStringArg(e.args, 0);
-                    string uid = GetStringArg(e.args, 1);
-                    string name = GetStringArg(e.args, 2);
-                    string data = GetStringArg(e.args, 3);
-                    _ = SendToConnectionAsync(targetConnection, uid, name, data);
-                    break;
-                }
+                    {
+                        string targetConnection = GetStringArg(e.args, 0);
+                        string uid = GetStringArg(e.args, 1);
+                        string name = GetStringArg(e.args, 2);
+                        string data = GetStringArg(e.args, 3);
+                        _ = SendToConnectionAsync(targetConnection, uid, name, data);
+                        break;
+                    }
             }
         }
 
