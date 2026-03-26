@@ -15,6 +15,7 @@ BaseModule:
     - TorrServer
     - Tracks
     - Transcoding
+    - WebLog
 chromium:
   enable: true
   executablePath: "/usr/bin/chromium"
