@@ -30,7 +30,7 @@ namespace SISI.Controllers
 
             string plugin = Regex.Match(HttpContext.Request.Path.Value, "^/([a-z]+)").Groups[1].Value;
 
-            rhubFallback:
+        rhubFallback:
             var cache = await InvokeCacheResult($"{plugin}:list:{search}:{sort}:{c}:{pg}", 10, jsonContext.ListPlaylistItem, async e =>
             {
                 List<PlaylistItem> playlists = null;
@@ -73,7 +73,7 @@ namespace SISI.Controllers
 
             string plugin = Regex.Match(HttpContext.Request.Path.Value, "^/([a-z]+)").Groups[1].Value;
 
-            rhubFallback:
+        rhubFallback:
             var cache = await InvokeCacheResult($"{plugin}:stars:{uri}:{sort}:{pg}", 10, jsonContext.ListPlaylistItem, async e =>
             {
                 var playlists = await XvideosTo.Pornstars("xds/vidosik", $"{plugin}/stars", init.host, plugin, uri, sort, pg,
@@ -90,7 +90,7 @@ namespace SISI.Controllers
                 goto rhubFallback;
 
             return PlaylistResult(cache
-                // XvideosTo.PornstarsMenu(host, plugin, sort)
+            // XvideosTo.PornstarsMenu(host, plugin, sort)
             );
         }
 

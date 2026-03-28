@@ -107,8 +107,8 @@ namespace OnlineAnime.Controllers
             }
             else
             {
-                #region Серии
-                rhubFallback:
+            #region Серии
+            rhubFallback:
                 var cache = await InvokeCacheResult<Episode[]>($"animelib:playlist:{uri}", TimeSpan.FromHours(1), async e =>
                 {
                     string req_uri = $"{init.host}/api/episodes?anime_id={uri}";
@@ -158,10 +158,10 @@ namespace OnlineAnime.Controllers
                 foreach (var player in players)
                 {
                     if (player.player != "Animelib")
-                            continue;
+                        continue;
 
                     if (string.IsNullOrEmpty(activTranslate))
-                            activTranslate = player.team.name;
+                        activTranslate = player.team.name;
 
                     vtpl.Append(player.team.name, activTranslate == player.team.name, $"{host}/lite/animelib?rjson={rjson}&title={HttpUtility.UrlEncode(title)}&uri={HttpUtility.UrlEncode(uri)}&t={HttpUtility.UrlEncode(player.team.name)}");
                 }
@@ -211,7 +211,7 @@ namespace OnlineAnime.Controllers
                     return ContentTo(rch.connectionMsg);
             }
 
-            rhubFallback:
+        rhubFallback:
             var cache = await InvokeCacheResult<Player[]>($"animelib:video:{id}", 30, async e =>
             {
                 string req_uri = $"{init.host}/api/episodes/{id}";

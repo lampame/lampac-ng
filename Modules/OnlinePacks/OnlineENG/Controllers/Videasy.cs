@@ -117,7 +117,7 @@ namespace OnlineENG.Controllers
 
                         PlaywrightBase.GotoAsync(page, uri);
 
-                        for (int i = 0; i < 10*5; i++) // 15 second
+                        for (int i = 0; i < 10 * 5; i++) // 15 second
                         {
                             if (browser.IsCompleted)
                                 break;

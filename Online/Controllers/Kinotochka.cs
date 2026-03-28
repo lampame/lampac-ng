@@ -37,8 +37,8 @@ namespace Online.Controllers
             {
                 if (s == -1)
                 {
-                    #region Сезоны
-                    rhubFallback:
+                #region Сезоны
+                rhubFallback:
 
                     var cache = await InvokeCacheResult<List<Season>>($"kinotochka:seasons:{title}", TimeSpan.FromHours(4), textJson: true, onget: async e =>
                     {
@@ -128,8 +128,8 @@ namespace Online.Controllers
                 }
                 else
                 {
-                    #region Серии
-                    rhubFallback:
+                #region Серии
+                rhubFallback:
 
                     var cache = await InvokeCacheResult<List<Episode>>($"kinotochka:playlist:{newsuri}", 30, textJson: true, onget: async e =>
                     {

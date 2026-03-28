@@ -50,7 +50,7 @@ namespace OnlineAnime.Controllers
                     bool checkName = true;
                     var catalog = new List<(string title, string year, int releases, string cover)>(search.Count);
 
-                    retry: foreach (var anime in search)
+                retry: foreach (var anime in search)
                     {
                         string name_main = StringConvert.SearchName(anime.name?.main);
                         string name_english = StringConvert.SearchName(anime.name?.english);
@@ -100,8 +100,8 @@ namespace OnlineAnime.Controllers
             }
             else
             {
-                #region Серии
-                rhubFallback:
+            #region Серии
+            rhubFallback:
                 var cache = await InvokeCacheResult<Release>($"aniliberty:releases:{releases}", 20, async e =>
                 {
                     var root = await httpHydra.Get<Release>($"{init.host}/api/v1/anime/releases/{releases}");

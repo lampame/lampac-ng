@@ -11,7 +11,7 @@ namespace OnlineENG.Controllers
         [Route("lite/playembed")]
         public Task<ActionResult> Index(bool checksearch, long id, long tmdb_id, string imdb_id, string title, string original_title, int serial, int s = -1, bool rjson = false)
         {
-            return ViewTmdb(checksearch, id, tmdb_id,imdb_id, title, original_title, serial, s, rjson, method: "call");
+            return ViewTmdb(checksearch, id, tmdb_id, imdb_id, title, original_title, serial, s, rjson, method: "call");
         }
 
         #region Video

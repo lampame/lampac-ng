@@ -9,7 +9,7 @@ namespace OnlineAnime.Services
     public struct KodikInvoke
     {
         #region KodikInvoke
-        static readonly ConcurrentDictionary<string, string> psingles = new ();
+        static readonly ConcurrentDictionary<string, string> psingles = new();
         //static readonly IMemoryCache memoryCache = HybridCache.GetMemory();
         readonly IEnumerable<Result> fallbackDatabase;
 
@@ -94,7 +94,7 @@ namespace OnlineAnime.Services
                     var root = await httpHydra.Get<RootObject>(url, safety: true, textJson: true);
                     if (root?.results != null)
                         results = root.results;
-                    }
+                }
 
                 //if (results == null)
                 //    results = FallbackByTitle(title, original_title);

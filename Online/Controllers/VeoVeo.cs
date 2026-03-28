@@ -11,7 +11,7 @@ namespace Online.Controllers
         public static List<Movie> database;
         static readonly HttpClient http2Client = FriendlyHttp.CreateHttp2Client();
 
-        public VeoVeo() : base(ModInit.siteConf.VeoVeo) 
+        public VeoVeo() : base(ModInit.siteConf.VeoVeo)
         {
             requestInitialization += () =>
             {
@@ -40,10 +40,10 @@ namespace Online.Controllers
 
                 movieid = movie.id;
             }
-            #endregion
+        #endregion
 
-            #region media
-            rhubFallback:
+        #region media
+        rhubFallback:
 
             var cache = await InvokeCacheResult<List<CatalogItem>>($"{init.plugin}:view:{movieid}", 20, async e =>
             {

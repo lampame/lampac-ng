@@ -27,7 +27,7 @@ namespace OnlineAnime.Controllers
                streamfile => HostStreamProxy(streamfile)
             );
 
-            rhubFallback:
+        rhubFallback:
             var cache = await InvokeCacheResult($"anilibriaonline:{title}", 40,
                 () => oninvk.Embed(title)
             );

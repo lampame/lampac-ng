@@ -24,8 +24,8 @@ namespace OnlineAnime.Controllers
 
             if (animeid == 0)
             {
-                #region Поиск
-                rhubFallback:
+            #region Поиск
+            rhubFallback:
                 var cache = await InvokeCacheResult<List<(string title, string year, long id, string poster)>>($"moonanime:search:{imdb_id}:{title}:{original_title}", TimeSpan.FromHours(4), async e =>
                 {
                     async Task<SearchRoot> goSearch(string arg)
@@ -90,8 +90,8 @@ namespace OnlineAnime.Controllers
             }
             else
             {
-                #region Серии
-                rhubFallback:
+            #region Серии
+            rhubFallback:
                 var cache = await InvokeCacheResult<List<Dictionary<string, Dictionary<string, List<Episode>>>>>($"moonanime:playlist:{animeid}", 30, async e =>
                 {
                     var root = await httpHydra.Get<List<Dictionary<string, Dictionary<string, List<Episode>>>>>($"{init.host}/api/2.0/title/{animeid}/videos?api_key={init.token}", safety: true);

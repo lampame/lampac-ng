@@ -494,7 +494,7 @@ namespace Shared
                 else
                 {
                     var entry = await hybridCache.EntryAsync(key, jsonType: jsonType, fileCache: true, textJson: textJson);
-                    if (entry != null && entry.success) 
+                    if (entry != null && entry.success)
                     {
                         HttpContext.Response.Headers["X-Invoke-Cache"] = "HIT";
                         UpdateStatiCacheFeatures(cachEx);
@@ -595,7 +595,7 @@ namespace Shared
                 if (rch?.enable != true)
                 {
                     semaphore = new SemaphorManager(key, TimeSpan.FromSeconds(30));
-                    bool  _acquired = await semaphore.WaitAsync().ConfigureAwait(false);
+                    bool _acquired = await semaphore.WaitAsync().ConfigureAwait(false);
                     if (!_acquired)
                         return new CacheResult<T>() { IsSuccess = false, ErrorMsg = "semaphore" };
 
@@ -695,7 +695,7 @@ namespace Shared
             if (init != null && init.rhub && rhub != -1)
                 return TimeSpan.FromMinutes(rhub);
 
-            int ctime = init != null && init.cache_time > 0 ? init.cache_time : multiaccess ;
+            int ctime = init != null && init.cache_time > 0 ? init.cache_time : multiaccess;
             if (ctime > multiaccess)
                 ctime = multiaccess;
 

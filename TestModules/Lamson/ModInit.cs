@@ -18,8 +18,8 @@ namespace Lamson
 
         public void Loaded(InitspaceModel conf)
         {
-			KinoGram = ModuleInvoke.Init("KinoGram", new OnlinesSettings("KinoGram", "kinogram.com", streamproxy: true));
-			PornGram = ModuleInvoke.Init("PornGram", new SisiSettings("PornGram", "porngram.com"));
+            KinoGram = ModuleInvoke.Init("KinoGram", new OnlinesSettings("KinoGram", "kinogram.com", streamproxy: true));
+            PornGram = ModuleInvoke.Init("PornGram", new SisiSettings("PornGram", "porngram.com"));
 
             ThreadPool.QueueUserWorkItem(async _ =>
             {

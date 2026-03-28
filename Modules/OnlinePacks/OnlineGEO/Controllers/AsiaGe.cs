@@ -80,9 +80,9 @@ namespace OnlineGEO.Controllers
                 if (string.IsNullOrWhiteSpace(href))
                     return ContentTpl(search.Value.similar);
             }
-            #endregion
+        #endregion
 
-            rhubFallback:
+        rhubFallback:
 
             var cache = await InvokeCacheResult<List<(string title, string file)>>($"asiage:view:{href}", 40, async e =>
             {

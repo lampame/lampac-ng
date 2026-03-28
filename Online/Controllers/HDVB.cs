@@ -26,7 +26,7 @@ namespace Online.Controllers
             List<Video> data = await search(kinopoisk_id);
             if (data == null || data.Count == 0)
             {
-                if(init.rhub && init.rhub_fallback)
+                if (init.rhub && init.rhub_fallback)
                 {
                     init.rhub = false;
                     goto reset;
@@ -152,7 +152,7 @@ namespace Online.Controllers
                     ("sec-fetch-site", "cross-site")
                 );
 
-                reset:
+            reset:
 
                 string urim3u8 = null;
                 string vid = "vid11", href = null, csrftoken = null, file = null;
@@ -266,7 +266,7 @@ namespace Online.Controllers
                         ("sec-fetch-site", "cross-site")
                     );
 
-                    reset_playlist:
+                reset_playlist:
 
                     string href = null, csrftoken = null, file = null;
 
@@ -380,7 +380,7 @@ namespace Online.Controllers
         #region SpiderSearch
         [HttpGet]
         [Route("lite/hdvb-search")]
-        async public Task<ActionResult> RouteSpiderSearch(string title,bool rjson = false)
+        async public Task<ActionResult> RouteSpiderSearch(string title, bool rjson = false)
         {
             if (string.IsNullOrWhiteSpace(title))
                 return OnError();

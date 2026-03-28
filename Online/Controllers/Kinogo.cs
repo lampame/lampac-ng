@@ -228,8 +228,8 @@ namespace Online.Controllers
                         if (file.StartsWith("//"))
                             file = "https:" + file;
 
-                    #region subtitle
-                    var subtitles = new SubtitleTpl();
+                        #region subtitle
+                        var subtitles = new SubtitleTpl();
                         string _subs = episode.subtitle;
 
                         if (!string.IsNullOrEmpty(_subs))

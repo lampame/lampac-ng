@@ -38,7 +38,7 @@ namespace SISI.Controllers
 
             try
             {
-                reset: // http запросы последовательно
+            reset: // http запросы последовательно
                 if (rch?.enable != true)
                 {
                     semaphore ??= new SemaphorManager(semaphoreKey, TimeSpan.FromSeconds(30));

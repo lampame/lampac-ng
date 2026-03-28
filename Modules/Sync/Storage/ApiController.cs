@@ -82,7 +82,7 @@ namespace Storage.Controllers
         #region Set
         [HttpPost]
         [Route("/storage/set")]
-        async public Task<ActionResult> Set([FromQuery]string path, [FromQuery]string pathfile, [FromQuery]string connectionId)
+        async public Task<ActionResult> Set([FromQuery] string path, [FromQuery] string pathfile, [FromQuery] string connectionId)
         {
             if (HttpContext.Request.ContentLength > maxRequestSize)
                 return ContentTo("{\"success\": false, \"msg\": \"max_size\"}");
@@ -186,7 +186,7 @@ namespace Storage.Controllers
 
             try
             {
-                bool  _acquired = await semaphore.WaitAsync();
+                bool _acquired = await semaphore.WaitAsync();
                 if (!_acquired)
                 {
                     HttpContext.Response.StatusCode = 502;

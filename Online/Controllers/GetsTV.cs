@@ -46,7 +46,7 @@ namespace Online.Controllers
             else
             {
                 var postdata = new System.Net.Http.StringContent($"{{\"email\":\"{login}\",\"password\":\"{pass}\",\"fingerprint\":\"{CrypTo.md5(DateTime.Now.ToString())}\",\"device\":{{}}}}", Encoding.UTF8, "application/json");
-                var result =  await Http.Post<JObject>($"{init.host}/api/login", postdata, httpversion: init.httpversion, proxy: proxy, headers: httpHeaders(init));
+                var result = await Http.Post<JObject>($"{init.host}/api/login", postdata, httpversion: init.httpversion, proxy: proxy, headers: httpHeaders(init));
 
                 if (result == null)
                     return ContentTo("Ошибка авторизации ;(");
@@ -89,7 +89,7 @@ namespace Online.Controllers
                 }
             }
 
-            rhubFallback:
+        rhubFallback:
             var cache = await InvokeCacheResult<MovieDetailsRoot>($"getstv:movies:{orid}", 40, async e =>
             {
                 var root = await httpHydra.Get<MovieDetailsRoot>($"{init.host}/api/movies/{orid}",

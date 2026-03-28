@@ -172,7 +172,7 @@ namespace OnlineAnime.Controllers
                     return ShowError(rch_error);
             }
 
-            rhubFallback:
+        rhubFallback:
             var cache = await InvokeCacheResult<List<(string l, string q)>>($"animevost:video:{id}", 20, async e =>
             {
                 var links = new List<(string l, string q)>(2);

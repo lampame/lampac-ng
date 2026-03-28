@@ -336,8 +336,8 @@ namespace Shared.Services
                 DefaultRequestHeaders(url, req, null, null, headers);
 
                 using (var cts = new CancellationTokenSource(TimeSpan.FromSeconds(Math.Max(5, timeoutSeconds))))
-                    using (HttpResponseMessage response = await client.SendAsync(req, HttpCompletionOption.ResponseHeadersRead, cts.Token).ConfigureAwait(false))
-                        return response;
+                using (HttpResponseMessage response = await client.SendAsync(req, HttpCompletionOption.ResponseHeadersRead, cts.Token).ConfigureAwait(false))
+                    return response;
             }
             catch
             {
@@ -351,7 +351,7 @@ namespace Shared.Services
         async public static Task<T> Get<T>(string url, string cookie = null, string referer = null, long MaxResponseContentBufferSize = 0, int timeoutSeconds = 15, List<HeadersModel> headers = null, bool IgnoreDeserializeObject = false, WebProxy proxy = null, bool statusCodeOK = true, int httpversion = 1, CookieContainer cookieContainer = null, bool useDefaultHeaders = true, HttpContent body = null, HttpClient httpClient = null, bool textJson = false)
         {
             return (await BaseGetAsync<T>(
-                url, cookie, referer, MaxResponseContentBufferSize, timeoutSeconds, headers, IgnoreDeserializeObject, proxy,statusCodeOK, httpversion, cookieContainer, useDefaultHeaders, body, httpClient, textJson
+                url, cookie, referer, MaxResponseContentBufferSize, timeoutSeconds, headers, IgnoreDeserializeObject, proxy, statusCodeOK, httpversion, cookieContainer, useDefaultHeaders, body, httpClient, textJson
             ).ConfigureAwait(false)).content;
         }
         #endregion

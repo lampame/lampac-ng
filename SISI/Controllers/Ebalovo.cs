@@ -65,7 +65,7 @@ namespace SISI.Controllers
                     return OnError("apkVersion", false);
             }
 
-            rhubFallback:
+        rhubFallback:
             var cache = await InvokeCacheResult(ipkey($"ebalovo:view:{uri}"), 20, jsonContext.StreamItem, async e =>
             {
                 string ehost = await goHost(init.host);

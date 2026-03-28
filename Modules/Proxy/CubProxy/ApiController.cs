@@ -204,7 +204,7 @@ namespace CubProxy.Controllers
                                 if (!_acquired)
                                     return;
 
-                                using(var nbuf = new BufferPool())
+                                using (var nbuf = new BufferPool())
                                 {
                                     try
                                     {

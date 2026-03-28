@@ -70,7 +70,7 @@ namespace Shared.Services
 
             ThreadPool.QueueUserWorkItem(async _ =>
             {
-                while(!Startup.IsShutdown)
+                while (!Startup.IsShutdown)
                 {
                     try
                     {
@@ -141,7 +141,7 @@ namespace Shared.Services
                     LastWriteTimeUtc = File.GetLastWriteTimeUtc(outFile)
                 };
 
-                cache.AddOrUpdate(md5key, md, (k,v) => md);
+                cache.AddOrUpdate(md5key, md, (k, v) => md);
 
                 return true;
             }
@@ -179,7 +179,7 @@ namespace Shared.Services
                     LastWriteTimeUtc = File.GetLastWriteTimeUtc(outFile)
                 };
 
-                cache.AddOrUpdate(md5key, md, (k,v) => md);
+                cache.AddOrUpdate(md5key, md, (k, v) => md);
 
                 return true;
             }

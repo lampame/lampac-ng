@@ -48,7 +48,7 @@ namespace NextHUB.Controllers
                     (init.view.nodeFile != null || init.view.eval != null || init.view.regexMatch != null) &&
                      init.view.routeEval == null && init.cookies == null && init.view.evalJS == null)
                 {
-                    reset:
+                reset:
                     if (rch?.enable != true)
                     {
                         semaphore ??= new SemaphorManager(semaphoreKey, TimeSpan.FromSeconds(30));
@@ -261,10 +261,10 @@ namespace NextHUB.Controllers
                             Log.Error(ex, "CatchId={CatchId}", "id_r9ux5f8f");
                         }
                     });
-                    #endregion
+                #endregion
 
-                    #region GotoAsync
-                    resetGotoAsync: string html = null;
+                #region GotoAsync
+                resetGotoAsync: string html = null;
                     var responce = await page.GotoAsync(init.view.viewsource ? $"view-source:{targetHost}" : targetHost, new PageGotoOptions()
                     {
                         Timeout = 10_000,

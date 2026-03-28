@@ -59,7 +59,7 @@ namespace SISI.Controllers
             SemaphorManager semaphore = null;
             string semaphoreKey = $"porntrex:view:{uri}";
 
-            reset:
+        reset:
             if (rch?.enable != true)
             {
                 semaphore ??= new SemaphorManager(semaphoreKey, TimeSpan.FromSeconds(30));

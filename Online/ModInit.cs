@@ -48,15 +48,17 @@ namespace Online
         {
             conf = ModuleInvoke.Init("online", new ModuleConf()
             {
-                findkp = "all", checkOnlineSearch = true,
-                spider = true, spiderName = "Spider",
+                findkp = "all",
+                checkOnlineSearch = true,
+                spider = true,
+                spiderName = "Spider",
                 component = "lampac",
                 name = CoreInit.conf.online.name,
                 description = "Плагин для просмотра онлайн сериалов и фильмов",
                 version = CoreInit.conf.online.version,
                 btn_priority_forced = CoreInit.conf.online.btn_priority_forced,
                 showquality = true,
-                with_search = new List<string>() 
+                with_search = new List<string>()
                 {
                     "kinotochka", "kinobase", "kinopub", "filmix", "filmixtv", "fxapi", "rezka", "rhsprem", "remux", "kinoukr", "collaps", "collaps-dash", "hdvb", "alloha", "veoveo", "rutubemovie", "vkmovie",
                     "animevost", "animego", "animedia", "animebesst", "anilibria", "aniliberty", "kodik", "animelib",
@@ -72,7 +74,8 @@ namespace Online
             {
                 enable = true,
                 displayindex = 551,
-                min_sid = 15, emptyVoice = true,
+                min_sid = 15,
+                emptyVoice = true,
                 redapi = "http://jac.red"
             });
 

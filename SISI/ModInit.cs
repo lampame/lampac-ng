@@ -48,8 +48,11 @@ namespace SISI
         {
             conf = ModuleInvoke.Init("sisi", new ModuleConf()
             {
-                spider = true, lgbt = true,
-                component = "sisi", iconame = "", push_all = true,
+                spider = true,
+                lgbt = true,
+                component = "sisi",
+                iconame = "",
+                push_all = true,
                 bookmarks = new BookmarksConf() { saveimage = true, savepreview = true },
                 history = new HistoryConf() { enable = true, days = 30 },
                 limit_map = new List<WafLimitRootMap>

@@ -152,7 +152,7 @@ namespace Shared.Services
         #region Eval
         public void EvalRun(string data)
         {
-            _= SendHub("evalrun", data).ConfigureAwait(false);
+            _ = SendHub("evalrun", data).ConfigureAwait(false);
         }
 
         public Task<string> Eval(string data)
@@ -573,7 +573,8 @@ namespace Shared.Services
             // разрешен возврат на сервер
             if (rhub_fallback)
             {
-                if (rch_deny.Contains(info.rchtype)) {
+                if (rch_deny.Contains(info.rchtype))
+                {
                     enableRhub = false;
                     init.rhub = false;
                 }

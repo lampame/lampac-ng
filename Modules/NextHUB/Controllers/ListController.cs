@@ -42,7 +42,7 @@ namespace NextHUB.Controllers
                     semaphoreKey += $":{HttpContext.Request.Query[item.arg]}";
             }
 
-            rhubFallback:
+        rhubFallback:
             var cache = await InvokeCacheResult(semaphoreKey, init.cache_time, jsonContext.ListPlaylistItem, async e =>
             {
                 #region contentParse
@@ -465,8 +465,10 @@ namespace NextHUB.Controllers
 
                             await browser.ClearContinueAsync(route, page);
                         }
-                        catch (Exception ex) {
-                            Serilog.Log.Error(ex, "CatchId={CatchId}", "id_e8da804c"); PlaywrightBase.ConsoleLog(() => ex.Message); }
+                        catch (Exception ex)
+                        {
+                            Serilog.Log.Error(ex, "CatchId={CatchId}", "id_e8da804c"); PlaywrightBase.ConsoleLog(() => ex.Message);
+                        }
                     });
 
                     string content = null;

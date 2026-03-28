@@ -23,7 +23,7 @@ namespace OnlineUKR.Controllers
                streamfile => HostStreamProxy(streamfile)
             );
 
-            rhubFallback:
+        rhubFallback:
             string mkey = !string.IsNullOrEmpty(href)
                 ? $"ashdi:view:{href}"
                 : $"ashdi:view:{imdb_id}:{kinopoisk_id}:{title}:{year}:{clarification}";

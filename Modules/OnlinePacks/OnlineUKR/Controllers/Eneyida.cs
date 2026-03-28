@@ -32,7 +32,7 @@ namespace OnlineUKR.Controllers
                onstreamtofile => HostStreamProxy(onstreamtofile)
             );
 
-            rhubFallback:
+        rhubFallback:
             var cache = await InvokeCacheResult($"eneyida:view:{title}:{year}:{href}:{clarification}:{similar}", 40,
                 () => oninvk.Embed((similar || clarification == 1) ? title : original_title, year, href, similar),
                 textJson: true

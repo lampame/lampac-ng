@@ -758,7 +758,7 @@ namespace Online.Controllers
                 if ((source != null && source.Equals("vokino", StringComparison.OrdinalIgnoreCase)) && !string.IsNullOrEmpty(id))
                     vid = id;
 
-                var myinit = loadKit(premiumConf.VoKino, kitconf , (j, i, c) =>
+                var myinit = loadKit(premiumConf.VoKino, kitconf, (j, i, c) =>
                 {
                     if (j.ContainsKey("online"))
                         i.online = c.online;
@@ -786,7 +786,8 @@ namespace Online.Controllers
                             if (view != null && view.ContainsKey("online") && view["online"] is JObject onlineObj)
                                 VoKinoInvoke.SendOnline(myinit, online, onlineObj);
                         }
-                    };
+                    }
+                    ;
 
                     if (CoreInit.conf.accsdb.enable)
                     {
@@ -834,7 +835,7 @@ namespace Online.Controllers
 
             #region Alloha
             {
-                var myinit = loadKit(premiumConf.Alloha, kitconf , (j, i, c) =>
+                var myinit = loadKit(premiumConf.Alloha, kitconf, (j, i, c) =>
                 {
                     if (j.ContainsKey("m4s"))
                         i.m4s = c.m4s;
@@ -847,7 +848,7 @@ namespace Online.Controllers
 
             #region RezkaPrem
             {
-                var rezka_premium = loadKit(premiumConf.RezkaPrem, kitconf , (j, i, c) =>
+                var rezka_premium = loadKit(premiumConf.RezkaPrem, kitconf, (j, i, c) =>
                 {
                     if (j.ContainsKey("premium"))
                         i.premium = c.premium;
@@ -990,7 +991,7 @@ namespace Online.Controllers
 
         #region checkSearch
         async Task checkSearch(string memkey, List<EventLinkItem> links, int indexList, dynamic init, int index, string name, string uri, string plugin,
-                               string id, string imdb_id, long kinopoisk_id, long tmdb_id, string title, string original_title, string original_language, string source,  int year, int serial, bool life, string rchtype)
+                               string id, string imdb_id, long kinopoisk_id, long tmdb_id, string title, string original_title, string original_language, string source, int year, int serial, bool life, string rchtype)
         {
             try
             {

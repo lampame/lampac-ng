@@ -29,7 +29,7 @@ namespace OnlineUKR.Controllers
                     href = await InvokeCache($"kinoukr:source:{id}", 180, () => oninvk.getIframeSource($"{init.host}/{id}"));
             }
 
-            rhubFallback:
+        rhubFallback:
             var cache = await InvokeCacheResult($"kinoukr:view:{title}:{original_title}:{year}:{href}:{clarification}", 40,
                 () => oninvk.EmbedKurwa(clarification, title, original_title, year, href),
                 textJson: true

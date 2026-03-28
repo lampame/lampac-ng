@@ -67,7 +67,8 @@ namespace Core.Middlewares
         async public Task InvokeAsync(HttpContext httpContext)
         {
             var init = CoreInit.conf.serverproxy.image;
-            if (!init.enable) {
+            if (!init.enable)
+            {
                 httpContext.Response.StatusCode = 404;
                 return;
             }
@@ -250,8 +251,8 @@ namespace Core.Middlewares
 
                         if (width == 0 && height == 0)
                         {
-                            #region bypass
-                            bypass_reset:
+                        #region bypass
+                        bypass_reset:
 
                             var client = FriendlyHttp.MessageClient("proxyimg", Http.Handler(href, proxy));
 
@@ -375,7 +376,7 @@ namespace Core.Middlewares
                             #region rsize
                             httpContext.Response.ContentType = contentType;
 
-                            rsize_reset:
+                        rsize_reset:
 
                             using (var inArray = PoolInvk.msm.GetStream())
                             {

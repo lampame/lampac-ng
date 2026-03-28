@@ -22,7 +22,8 @@ namespace Core.Middlewares
         async public Task InvokeAsync(HttpContext httpContext)
         {
             var stc = httpContext.Features.Get<StaticacheFeature>();
-            if (stc == null) {
+            if (stc == null)
+            {
                 await _next(httpContext);
                 return;
             }

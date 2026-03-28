@@ -253,7 +253,7 @@ namespace OnlineUKR.Services
                     serial = result.serial_ashdi
                 };
 
-                return invk.Tpl(md, enc_href, null, 0, title, original_title,0, year, _t, s, vast, rjson, host + $"lite/kinoukr?rjson={rjson}&clarification={clarification}&title={enc_title}&original_title={enc_original_title}&year={year}&href={enc_href}");
+                return invk.Tpl(md, enc_href, null, 0, title, original_title, 0, year, _t, s, vast, rjson, host + $"lite/kinoukr?rjson={rjson}&clarification={clarification}&title={enc_title}&original_title={enc_original_title}&year={year}&href={enc_href}");
             }
 
             if (result.content != null)
@@ -265,7 +265,7 @@ namespace OnlineUKR.Services
                 if (string.IsNullOrWhiteSpace(hls))
                 {
                     string base64 = Regex.Match(result.content, "file: ?(\"|')(?<base64>[^\"']+)(\"|')").Groups["base64"].Value;
-                           base64 = Regex.Replace(base64, "==$", "");
+                    base64 = Regex.Replace(base64, "==$", "");
 
                     hls = string.Join("", CrypTo.DecodeBase64(base64).Reverse());
 

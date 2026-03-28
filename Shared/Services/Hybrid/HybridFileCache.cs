@@ -144,7 +144,7 @@ namespace Shared.Services.Hybrid
                                 {
                                     using (var msm = PoolInvk.msm.GetStream())
                                     {
-                                        await using(var gzip = new GZipStream(msm, CompressionLevel.Fastest, leaveOpen: true))
+                                        await using (var gzip = new GZipStream(msm, CompressionLevel.Fastest, leaveOpen: true))
                                         {
                                             using (var sw = new StreamWriter(gzip, _utf8NoBom, PoolInvk.bufferSize, leaveOpen: true))
                                             {
@@ -387,7 +387,7 @@ namespace Shared.Services.Hybrid
                                     PoolInvk.bufferSize,
                                     options: FileOptions.Asynchronous | FileOptions.SequentialScan))
                                 {
-                                    await using(var gzip = new GZipStream(fs, CompressionMode.Decompress, leaveOpen: true))
+                                    await using (var gzip = new GZipStream(fs, CompressionMode.Decompress, leaveOpen: true))
                                     {
                                         using (var byteBuf = new BufferBytePool(BufferBytePool.sizeSmall))
                                         {
