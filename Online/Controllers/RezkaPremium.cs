@@ -223,7 +223,7 @@ namespace Online.Controllers
             }
             #endregion
 
-            var cache = await InvokeCacheResult($"rhsprem:{href}", 10,
+            var cache = await InvokeCacheResult($"rhsprem:{href}:{onrezka.cookie}", 10,
                 () => oninvk.Embed(href, search_uri),
                 textJson: true
             );
@@ -258,7 +258,7 @@ namespace Online.Controllers
                 textJson: true
             );
 
-            var cache_content = await InvokeCacheResult($"rhsprem:{href}", 10,
+            var cache_content = await InvokeCacheResult($"rhsprem:{href}:{onrezka.cookie}", 10,
                 () => oninvk.Embed(href, null),
                 textJson: true
             );
