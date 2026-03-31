@@ -25,12 +25,13 @@
 | `mutations_api_secret` | Тот же секрет, что **`TelegramAuth.mutations_api_secret`**. Нужен для `/users`, `/import`, `/cleanup` и связанных вызовов API (заголовок `X-TelegramAuth-Mutations-Secret`). Если пусто — админ-команды сообщат об этом. |
 | `admin_chat_ids` | Если **не пустой** — админ-команды (`/users`, …) только из этих групп, **кроме** лички пользователей из `owner_telegram_ids`. Если **пустой** — админ-команды из любого чата (удобно для личного бота). |
 | `owner_telegram_ids` | Числовые **user** id (как в `TelegramAuth.owner_telegram_ids`). Нужны, если задан `admin_chat_ids`, но владелец хочет вызывать `/users` из лички. |
+| `notify_admins_on_pending_provision` | `true` по умолчанию. После успешной привязки UID, когда новый пользователь создан в режиме **ожидания подтверждения** (`auto_provision_activate_immediately: false`), бот рассылает администраторам (роль `admin` в базе) личные сообщения с кнопками «Принять» / «Отклонить`. Для запроса списка админов используется тот же API, что и `/users`; поэтому при **пустом** `mutations_api_secret` уведомления **не отправляются** (в лог пишется предупреждение). Установите `false`, чтобы отключить рассылку. |
 
 ## Как это работает
 
 1. При старте регистрируется `HostedService`: проверка токена (`GetMe`), снятие webhook, цикл **`GetUpdates`** (long polling).
 2. Для каждого апдейта создаётся сессия с HTTP-клиентом к `lampac_base_url` ([`TelegramAuthApiClient`](Services/TelegramAuthApiClient.cs)).
-3. Привязка устройства: бот вызывает `GET .../tg/auth/user/by-telegram` — если пользователь не найден или доступ неактивен, привязка не выполняется; иначе `POST .../tg/auth/bind/complete` с `uid`, `telegramId`, `username`. Имя устройства в `users.json` клиент выставляет после входа (`POST .../tg/auth/device/name`) или пользователь — командой `/devicename` (см. [TelegramAuth](../TelegramAuth/README.md)).
+3. Привязка устройства: бот вызывает `GET .../tg/auth/user/by-telegram`. Если пользователь **найден**, но доступ **неактивен** (ожидание модерации, отключён админом или истёк срок), привязка **не выполняется** — пользователю отправляется пояснение. Если учётки **ещё нет** и включён `auto_provision_users`, привязка выполняется через `POST .../tg/auth/bind/complete` (создание пользователя и устройства на стороне API). Иначе — тот же `bind/complete` для уже существующей записи. При успешной регистрации с ожиданием подтверждения админам может уйти уведомление (см. **`notify_admins_on_pending_provision`**). Имя устройства в `users.json` клиент выставляет после входа (`POST .../tg/auth/device/name`) или пользователь — командой `/devicename` (см. [TelegramAuth](../TelegramAuth/README.md)).
 
 **Важно:** процесс должен видеть Lampac по сети. В Docker часто нужен URL вида `http://host.docker.internal:9118` или имя сервиса compose, а не только `127.0.0.1`, если бот крутится в другом контейнере.
 
@@ -71,6 +72,7 @@
 | Бот молчит при старте | `enable`, `bot_token`, сеть до `api.telegram.org`, логи Serilog / консоль. |
 | «Тебя нет в базе» | Запись пользователя с вашим Telegram ID в `users.json` (TelegramAuth), импорт или ручное добавление. |
 | Привязка не срабатывает | Lampac доступен с хоста бота по `lampac_base_url`; пользователь `active`; лимит устройств не превышен. |
-| `/import` или `/cleanup` не работают | Одинаковый `mutations_api_secret`; роль `admin`; если задан `admin_chat_ids` — команда из этой группы или из лички при наличии твоего id в `owner_telegram_ids`. |
+| `/import` или `/cleanup` не работают | Непустой `mutations_api_secret` (бот не подставляет root-cookie); значение совпадает с `TelegramAuth.mutations_api_secret`; роль `admin`; если задан `admin_chat_ids` — команда из этой группы или из лички при наличии твоего id в `owner_telegram_ids`. |
+| Админы не получили уведомление о новой заявке | Включён `notify_admins_on_pending_provision`; задан ненулевой `mutations_api_secret`; в `users.json` есть хотя бы один пользователь с ролью `admin`. |
 
 Подробное описание HTTP API см. в [README модуля TelegramAuth](../TelegramAuth/README.md).
