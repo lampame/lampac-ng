@@ -503,7 +503,7 @@ namespace OnlineRUS.Controllers
                             var injected = @"
                                 <script>
                                 (function() {
-                                    localStorage.setItem('allplay', '{""captionParam"":{""fontSize"":""100%"",""colorText"":""Белый"",""colorBackground"":""Черный"",""opacityText"":""100%"",""opacityBackground"":""75%"",""styleText"":""Без контура"",""weightText"":""Обычный текст""},""quality"":"+(init.m4s ? "2160" : "1080")+@",""volume"":0.5,""muted"":true,""label"":""(Russian) Forced"",""captions"":false}');
+                                    localStorage.setItem('allplay', '{""captionParam"":{""fontSize"":""100%"",""colorText"":""Белый"",""colorBackground"":""Черный"",""opacityText"":""100%"",""opacityBackground"":""75%"",""styleText"":""Без контура"",""weightText"":""Обычный текст""},""quality"":" + (init.m4s ? "2160" : "1080") + @",""volume"":0.5,""muted"":true,""label"":""(Russian) Forced"",""captions"":false}');
                                 })();
                                 </script>";
 
