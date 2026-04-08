@@ -8,17 +8,26 @@ OUTPUT="${OUTPUT:-publish}"
 CONFIG="${CONFIG:-Release}"
 
 CLEAN=false
+FORMAT=false
 extra_args=()
 for arg in "$@"; do
   case "$arg" in
     --clean|-C)
       CLEAN=true
       ;;
+    --format)
+      FORMAT=true
+      ;;
     *)
       extra_args+=("$arg")
       ;;
   esac
 done
+
+if [[ "$FORMAT" == true ]]; then
+  dotnet format NextGen.slnx
+  exit 0
+fi
 
 if [[ "$CLEAN" == true ]]; then
   while IFS= read -r -d '' d; do
