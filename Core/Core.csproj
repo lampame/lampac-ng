@@ -7,7 +7,8 @@
     <AssemblyName>Core</AssemblyName>
     <RootNamespace>Core</RootNamespace>
     <ServerGarbageCollection>false</ServerGarbageCollection>
-    <!-- Emit Core.exe (Windows) / apphost for publish RID; Docker/Linux can still use `dotnet Core.dll`. -->
+    <!-- Emit Core.exe (Windows) / apphost for publish RID; Docker/Linux can still use `dotnet
+    Core.dll`. -->
     <UseAppHost>true</UseAppHost>
     <!-- After publish, move managed dependency DLLs + satellite culture folders into
     runtimes/references (same as lampac). Program.Main preloads that folder. Set false to keep a
@@ -24,6 +25,7 @@
     <Compile Remove="database\**" />
     <Content Remove="cache\**" />
     <Content Remove="database\**" />
+    <Content Remove="$(NuGetPackageRoot)microsoft.playwright/**" />
     <EmbeddedResource Remove="cache\**" />
     <EmbeddedResource Remove="database\**" />
     <None Remove="cache\**" />
