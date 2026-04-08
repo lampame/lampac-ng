@@ -1,4 +1,13 @@
 ---
+# Optional dev/test Compose — NOT the main way to run Lampac (see docker-compose.yaml for that).
+# Use for local development, trying changes, or a second instance on port 29118. README → Docker.
+#
+# Required on the host before `docker compose -f docker-compose.dev.yaml up -d`:
+#   - lampac-docker/config/passwd          (same as prod: one-line root password)
+#   - lampac-docker/config/development.init.conf → mounted as /lampac/init.conf
+#     In that file set listen.port to 29118 so it matches `ports` below (default example uses 9118).
+#   - lampac-docker/plugins/lampainit.js   (create empty: touch …, or copy from Modules/LampaWeb/plugins/lampainit.js)
+#
 name: lampac
 
 services:
@@ -14,17 +23,13 @@ services:
       options:
         tag: "{{.Name}}"
     labels:
-      - dev.orbstack.http-port=29118 # HTTPS access via OrbStack
+      - dev.orbstack.http-port=29118 # OrbStack: HTTPS access helper
     volumes:
-      # Passwords
       - ./lampac-docker/config/passwd:/lampac/passwd
-      # Config
       - ./lampac-docker/config/development.init.conf:/lampac/init.conf
-      # Modules
+      # Optional: mount a user module (README → manifest.json / mods)
       # - ./lampac-docker/mods/BulbaCrawler:/lampac/mods/BulbaCrawler
-      # Plugins / Override Files
       - ./lampac-docker/plugins/lampainit.js:/lampac/plugins/override/lampainit.js
-      # # Cache
+      # Optional: persist cache / database
       # - ./lampac-docker/cache:/lampac/cache
-      # # Database
       # - ./lampac-docker/database:/lampac/database

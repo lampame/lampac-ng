@@ -26,6 +26,9 @@
 5. [Возможности](#возможности)
 6. [Быстрый старт](#быстрый-старт)
    - [Docker](#docker)
+     - [Основной запуск (docker-compose.yaml)](#основной-запуск-docker-composeyaml)
+     - [Разработка и тесты (dev compose)](#разработка-и-тесты-dev-compose)
+     - [Модули, manifest.json и Docker](#модули-manifestjson-и-docker)
    - [Нативная установка (Linux)](#нативная-установка-linux)
    - [Ручная сборка](#ручная-сборка)
 7. [Конфигурация](#конфигурация)
@@ -131,39 +134,91 @@
 
 ### Docker
 
-Compose-файлы лежат в **корне репозитория** (`docker-compose.yaml` — обычный запуск, `docker-compose.dev.yaml` — разработка с другим портом и конфигом).
+**Основной сценарий** для запуска Lampac у себя — файл **`docker-compose.yaml`** (порт **9118**, сеть и проброс портов как у «нормального» сервиса). Из корня клона после подготовки файлов на хосте достаточно:
 
 ```bash
-# Клонировать репозиторий
+docker compose up -d
+```
+
+(Compose по умолчанию подхватывает `docker-compose.yaml`; явный вариант тот же: `docker compose -f docker-compose.yaml up -d`.)
+
+Файл **`docker-compose.dev.yaml`** — **не** основной путь. Он нужен **для разработки** репозитория: правки кода/конфига, прогон тестов, отдельная инстанция на порту **29118**, чтобы не мешать контейнеру с **9118**. Для обычного использования ориентируйтесь на **`docker-compose.yaml`**. В начале каждого YAML есть краткие комментарии по обязательным файлам на хосте.
+
+#### Основной запуск (docker-compose.yaml)
+
+Файл: **`docker-compose.yaml`**.
+
+| | |
+| --- | --- |
+| **Порт** | **9118** (`9118:9118`) |
+| **Тома** | Блок **`volumes` по умолчанию закомментирован** — контейнер стартует с **`init.conf` и `passwd` из образа**. Чтобы вести конфиг на хосте, создайте файлы и **раскомментируйте** тома (см. комментарии в файле). Пока тома закомментированы, каталог **`./lampac-docker/`** на хосте **не используется**. |
+
+**Пошагово**
+
+```bash
 git clone https://github.com/lampac-nextgen/lampac.git
 cd lampac
 
-# Подготовить каталог на хосте (в репозитории его нет — создайте сами)
 mkdir -p lampac-docker/config lampac-docker/plugins
 cp config/example.init.conf lampac-docker/config/init.conf
-# для docker-compose.dev.yaml также нужен отдельный файл:
-# cp config/example.init.conf lampac-docker/config/development.init.conf
+# При необходимости отредактируйте init.conf.
+
 printf '%s' 'ваш_надёжный_пароль_root' > lampac-docker/config/passwd
 
-# Запуск (из корня клона)
-docker compose -f docker-compose.yaml up -d
+# Раскомментируйте блок volumes в docker-compose.yaml (passwd, init.conf и при необходимости остальное).
+
+docker compose up -d
 ```
 
-Сервер в продовом compose слушает **9118** (`ports: 9118:9118`). В **`docker-compose.dev.yaml`** проброшен порт **29118** и монтируется `development.init.conf` — удобно, если основной порт уже занят.
+#### Разработка и тесты (dev compose)
 
-**Как устроено в репозитории:** рабочая директория процесса в образе — `/lampac`. Файлы **`passwd`** и **`init.conf`** читаются из **корня этой директории** (не из подкаталога `config/` внутри контейнера). В compose они монтируются так:
+Файл: **`docker-compose.dev.yaml`**.
 
-| Путь на хосте (пример из репозитория) | Путь в контейнере | Назначение |
+| | |
+| --- | --- |
+| **Порт** | **29118** |
+| **Тома** | Включены: `passwd`, `development.init.conf` → `/lampac/init.conf`, `lampainit.js`. |
+| **Когда использовать** | Локальная разработка, эксперименты, отдельный конфиг; не замена основному **`docker-compose.yaml`** для типичного запуска. |
+
+В **`development.init.conf`** в **`listen.port`** укажите **`29118`**, иначе проброс портов не совпадёт с портом приложения (в [`config/example.init.conf`](config/example.init.conf) по умолчанию **9118**). **`lampac-docker/plugins/lampainit.js`** должен существовать до `up` (`touch` или копия [`Modules/LampaWeb/plugins/lampainit.js`](Modules/LampaWeb/plugins/lampainit.js)).
+
+```bash
+mkdir -p lampac-docker/config lampac-docker/plugins
+cp config/example.init.conf lampac-docker/config/development.init.conf
+# В development.init.conf: "listen"."port": 29118
+
+printf '%s' 'ваш_надёжный_пароль_root' > lampac-docker/config/passwd
+cp Modules/LampaWeb/plugins/lampainit.js lampac-docker/plugins/lampainit.js
+
+docker compose -f docker-compose.dev.yaml up -d
+# http://localhost:29118
+```
+
+В обоих compose-файлах задано **`container_name: lampac`**. Одновременно поднять оба без правки **нельзя** — выполните `docker compose down` для одного варианта или переименуйте `container_name` в локальной копии.
+
+**Рабочая директория в контейнере** — `/lampac`. Файлы **`passwd`** и **`init.conf`** приложение читает из **корня `/lampac`**, а не из подкаталога `config/` внутри контейнера. На хосте удобно хранить их в `./lampac-docker/config/`, но пути монтирования должны заканчиваться на **`/lampac/passwd`** и **`/lampac/init.conf`**.
+
+| Путь на хосте (пример) | Путь в контейнере | Назначение |
 | --- | --- | --- |
 | `./lampac-docker/config/passwd` | `/lampac/passwd` | Пароль root (WebLog, служебные функции) |
-| `./lampac-docker/config/init.conf` | `/lampac/init.conf` | Основная конфигурация |
-| `./lampac-docker/plugins/lampainit.js` | `/lampac/plugins/override/lampainit.js` | Переопределение клиентского плагина (опционально) |
+| `./lampac-docker/config/init.conf` | `/lampac/init.conf` | Основная конфигурация (прод-подобный compose) |
+| `./lampac-docker/config/development.init.conf` | `/lampac/init.conf` | То же имя внутри контейнера — отдельный файл только на хосте (dev compose) |
+| `./lampac-docker/plugins/lampainit.js` | `/lampac/plugins/override/lampainit.js` | Переопределение клиентского плагина (опционально; в dev-compose монтирование включено) |
 
-В **`docker-compose.yaml`** по умолчанию отдельная bridge-сеть с фиксированным IP контейнера (`10.10.10.10`); `network_mode: host` **закомментирован**. При необходимости host-сети раскомментируйте `network_mode: host` и уберите/измените блок `ports`/`networks` в своём override.
+В **`docker-compose.yaml`** по умолчанию используется отдельная bridge-сеть с фиксированным IP контейнера (`10.10.10.10`); **`network_mode: host`** закомментирован. Если нужна сеть хоста — раскомментируйте `network_mode: host` и согласуйте с этим блоки `ports` / `networks` (в комментарии в файле кратко указано то же).
 
-Каталоги **`module/`** и **`mods/`** в образе уже заполнены поставкой; дополнительно монтировать их нужно только если переопределяете исходники модулей (см. закомментированные примеры в compose).
+Каталоги **`module/`** и **`mods/`** в образе уже заполнены поставкой. Дополнительные тома нужны, если вы подключаете **свой** каталог модуля в `mods/` (пример в комментариях compose) или хотите **переопределить** файлы модуля, в том числе **`manifest.json`** (см. следующий подраздел).
 
-**Упрощённый пример сервиса (эквивалент идеи из репозитория):**
+#### Модули, manifest.json и Docker
+
+Состав загружаемых модулей задаётся двумя основными механизмами (подробнее таблица в разделе [Модули](#модули)):
+
+1. **`init.conf`** — **`BaseModule.SkipModules`**: список **имён** модулей, которые **не** загружаются, даже если их код есть в образе.
+2. **`manifest.json`** в каталоге модуля в **`/lampac/module/...`** или **`/lampac/mods/...`**: ключ **`"enable": true|false`** включает или отключает модуль при старте. У части модулей в репозитории по умолчанию **`"enable": false`** (например, [AdminPanel](Modules/AdminPanel/manifest.json), [ExternalBind](Modules/ExternalBind/manifest.json)) — в образе они поставляются выключенными, пока не измените манифест или не смонтируете каталог с **`"enable": true`**.
+
+Чтобы **включить** модуль, выключенный в манифесте образа, без пересборки образа: скопируйте каталог модуля с хоста из репозитория (или из образа), поправьте в нём `manifest.json`, смонтируйте **в тот же относительный путь**, что в образе — обычно **`/lampac/module/<Имя>/`** для штатных модулей или **`/lampac/mods/<Имя>/`** для своих/дополнительных (пример тома для `mods/` см. в **`docker-compose.yaml`**). Пользовательские расширения кладутся в **`mods/<Имя>/`** с `manifest.json` и исходниками — см. [Подключение пользовательских модулей](#подключение-пользовательских-модулей).
+
+**Упрощённый пример сервиса** (когда тома уже согласованы с хостом):
 
 ```yaml
 services:
@@ -247,7 +302,7 @@ RUNTIME_ID=linux-arm64 ./build.sh
 
 ### Пример конфигурации в репозитории
 
-В репозитории лежат примеры [`config/example.init.conf`](config/example.init.conf) и [`config/example.init.yaml`](config/example.init.yaml): скопируйте нужный вариант в рабочий `init.conf` (или используйте `init.yaml` рядом) и отредактируйте под себя. Типичные пути: при [нативной установке](#нативная-установка-linux) — `/opt/lampac/init.conf` (рядом с `Core.dll`, корень задаётся через `LAMPAC_INSTALL_ROOT`); при [Docker](#docker) — на хосте, например `./lampac-docker/config/init.conf`, с монтированием в **`/lampac/init.conf`** в контейнере (как в `docker-compose.yaml`).
+В репозитории лежат примеры [`config/example.init.conf`](config/example.init.conf) и [`config/example.init.yaml`](config/example.init.yaml): скопируйте нужный вариант в рабочий `init.conf` (или используйте `init.yaml` рядом) и отредактируйте под себя. Типичные пути: при [нативной установке](#нативная-установка-linux) — `/opt/lampac/init.conf` (рядом с `Core.dll`, корень задаётся через `LAMPAC_INSTALL_ROOT`); при [Docker](#docker) — на хосте, например `./lampac-docker/config/init.conf`, с монтированием в **`/lampac/init.conf`** в контейнере после **раскомментирования** томов в `docker-compose.yaml` (см. [основной запуск в Docker](#основной-запуск-docker-composeyaml)).
 
 Пример демонстрирует:
 
@@ -420,17 +475,18 @@ RUNTIME_ID=linux-arm64 ./build.sh
 
 **Пользовательский модуль** — создайте поддиректорию в `mods/` с файлом `manifest.json` и исходными `.cs`-файлами. Модуль будет скомпилирован при запуске сервера через Roslyn (`CSharpEval`).
 
-Пример структуры (`mods/MyModule/`):
+Пример структуры (`mods/MyModule/`). Минимально в **`manifest.json`** должны быть осмысленные метаданные и **`"enable": true`**, иначе модуль может не загрузиться:
 
 ```json
 {
   "name": "MyModule",
   "description": "Описание модуля",
-  "version": "1.0"
+  "version": "1.0",
+  "enable": true
 }
 ```
 
-Модуль будет скомпилирован через Roslyn (`CSharpEval`) при старте сервера.
+У модулей из поставки нередко есть поле **`"dynamic": true`** (загрузка через Roslyn); для своего модуля ориентируйтесь на ближайший по смыслу пример из `Modules/*/manifest.json`. Модуль будет скомпилирован через Roslyn (`CSharpEval`) при старте сервера.
 
 ---
 
