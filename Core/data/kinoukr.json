@@ -521,15 +521,6 @@
     "ashdi": "vod/59127",
     "tortuga": "vod/75263"
   },
-  "140-shalenij-maks-doroga-gnivu.html": {
-    "name": "Шалений Макс. Дорога гніву",
-    "eng_name": "Mad Max: Fury Road",
-    "year": "2015",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/4132",
-    "tortuga": "vod/4120"
-  },
   "1590-godyna-pik-2.html": {
     "name": "Година пік 2",
     "eng_name": "Rush Hour 2",
@@ -538,6 +529,15 @@
     "imdb_id": null,
     "ashdi": "vod/8649",
     "tortuga": "vod/47590"
+  },
+  "140-shalenij-maks-doroga-gnivu.html": {
+    "name": "Шалений Макс. Дорога гніву",
+    "eng_name": "Mad Max: Fury Road",
+    "year": "2015",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/4132",
+    "tortuga": "vod/4120"
   },
   "6406-blakytni-ochi.html": {
     "name": "Блакитні очі",
@@ -1754,15 +1754,6 @@
     "ashdi": "vod/3028",
     "tortuga": "vod/1488"
   },
-  "481-afera-doktora-noka.html": {
-    "name": "Афера доктора Нока",
-    "eng_name": "Knock",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/5957",
-    "tortuga": "vod/12011"
-  },
   "3804-eyforiya.html": {
     "name": "Ейфорія",
     "eng_name": "Euphoria",
@@ -1780,6 +1771,15 @@
     "imdb_id": null,
     "ashdi": "vod/13633",
     "tortuga": "vod/83191"
+  },
+  "481-afera-doktora-noka.html": {
+    "name": "Афера доктора Нока",
+    "eng_name": "Knock",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/5957",
+    "tortuga": "vod/12011"
   },
   "7489-studiya-30.html": {
     "name": "Студія 30",
@@ -3482,15 +3482,6 @@
     "ashdi": "vod/71804",
     "tortuga": "vod/75228"
   },
-  "243-zdichavila.html": {
-    "name": "Здичавіла",
-    "eng_name": "Wildling",
-    "year": "2018",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/330",
-    "tortuga": "vod/14361"
-  },
   "7253-bizhy-i-ne-ozyraysya.html": {
     "name": "Біжи і не озирайся",
     "eng_name": "Running Scared",
@@ -3499,6 +3490,15 @@
     "imdb_id": null,
     "ashdi": "vod/20352",
     "tortuga": "vod/75741"
+  },
+  "243-zdichavila.html": {
+    "name": "Здичавіла",
+    "eng_name": "Wildling",
+    "year": "2018",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/330",
+    "tortuga": "vod/14361"
   },
   "6910-prodavci-bolyu.html": {
     "name": "Продавці болю",
@@ -4391,6 +4391,15 @@
     "ashdi": "vod/20202",
     "tortuga": null
   },
+  "8767-vidchuy-miy-golos.html": {
+    "name": "Відчуй мій голос",
+    "eng_name": "Non abbiam bisogno di parole / Feel My Voice",
+    "year": "2026",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/245594",
+    "tortuga": null
+  },
   "2183-gercogynya.html": {
     "name": "Герцогиня",
     "eng_name": "The Duchess",
@@ -4598,15 +4607,6 @@
     "ashdi": "vod/79573",
     "tortuga": "vod/81165"
   },
-  "49-warcraft-pochatok-vorkraft-pochatok.html": {
-    "name": "Warcraft: Початок / Воркрафт: Початок",
-    "eng_name": "Warcraft",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/1323",
-    "tortuga": "vod/5372"
-  },
   "3252-poslannya-v-plyashci.html": {
     "name": "Послання в пляшці",
     "eng_name": "Message in a Bottle",
@@ -4615,6 +4615,15 @@
     "imdb_id": null,
     "ashdi": "vod/21769",
     "tortuga": "vod/45827"
+  },
+  "49-warcraft-pochatok-vorkraft-pochatok.html": {
+    "name": "Warcraft: Початок / Воркрафт: Початок",
+    "eng_name": "Warcraft",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/1323",
+    "tortuga": "vod/5372"
   },
   "7715-begmen.html": {
     "name": "Беґмен",
@@ -5831,15 +5840,6 @@
     "ashdi": "vod/13929",
     "tortuga": "vod/53970"
   },
-  "586-ledi-makbet.html": {
-    "name": "Леді Макбет",
-    "eng_name": "Lady Macbeth",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/17284",
-    "tortuga": "vod/10350"
-  },
   "4345-my-mozhemo-buty-geroyamy.html": {
     "name": "Ми можемо бути героями",
     "eng_name": "We Can Be Heroes",
@@ -5848,6 +5848,15 @@
     "imdb_id": null,
     "ashdi": null,
     "tortuga": "vod/65472"
+  },
+  "586-ledi-makbet.html": {
+    "name": "Леді Макбет",
+    "eng_name": "Lady Macbeth",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/17284",
+    "tortuga": "vod/10350"
   },
   "6469-dekameron.html": {
     "name": "Декамерон",
@@ -5993,15 +6002,6 @@
     "ashdi": "vod/58389",
     "tortuga": "vod/10434"
   },
-  "396-iljuzija-obmanu.html": {
-    "name": "Ілюзія обману",
-    "eng_name": "Now You See Me",
-    "year": "2013",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/1059",
-    "tortuga": "vod/6643"
-  },
   "1535-nevydymka.html": {
     "name": "Невидимка",
     "eng_name": "Hollow Man",
@@ -6010,6 +6010,15 @@
     "imdb_id": null,
     "ashdi": "vod/79445",
     "tortuga": "vod/57402"
+  },
+  "396-iljuzija-obmanu.html": {
+    "name": "Ілюзія обману",
+    "eng_name": "Now You See Me",
+    "year": "2013",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/1059",
+    "tortuga": "vod/6643"
   },
   "583-toy-scho-vyganyaye-dyyavola.html": {
     "name": "Той, що виганяє диявола",
@@ -6389,15 +6398,6 @@
     "ashdi": "vod/52295",
     "tortuga": "vod/46435"
   },
-  "8759-saylent-gill-povernennya.html": {
-    "name": "Сайлент Гілл. Повернення",
-    "eng_name": "Return to Silent Hill",
-    "year": "2026",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/238145",
-    "tortuga": "vod/122703"
-  },
   "6979-peresliduvach.html": {
     "name": "Переслідувач",
     "eng_name": "Chugyeokja",
@@ -6406,6 +6406,15 @@
     "imdb_id": null,
     "ashdi": "vod/51479",
     "tortuga": "vod/72505"
+  },
+  "8759-saylent-gill-povernennya.html": {
+    "name": "Сайлент Гілл. Повернення",
+    "eng_name": "Return to Silent Hill",
+    "year": "2026",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/238145",
+    "tortuga": "vod/122703"
   },
   "1244-voron-voron-mesnyk.html": {
     "name": "Ворон / Ворон-месник",
@@ -7703,15 +7712,6 @@
     "ashdi": "vod/14521",
     "tortuga": "vod/57691"
   },
-  "468-koko.html": {
-    "name": "Коко",
-    "eng_name": "Coco",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/464",
-    "tortuga": "vod/1212"
-  },
   "4366-yak-ya-zustrila-vashogo-batka.html": {
     "name": "Як я зустріла вашого батька",
     "eng_name": "How I Met Your Father",
@@ -7720,6 +7720,15 @@
     "imdb_id": null,
     "ashdi": "serial/1347",
     "tortuga": "embed/1486"
+  },
+  "468-koko.html": {
+    "name": "Коко",
+    "eng_name": "Coco",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/464",
+    "tortuga": "vod/1212"
   },
   "5776-shvydka-dopomoga-nyu-york.html": {
     "name": "Швидка допомога: Нью-Йорк",
@@ -8432,15 +8441,6 @@
     "ashdi": "vod/43164",
     "tortuga": "vod/57880"
   },
-  "29-auditor.html": {
-    "name": "Аудитор",
-    "eng_name": "The Accountant",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/3025",
-    "tortuga": "vod/6830"
-  },
   "1478-poslannycya-istoriya-zhanny-dark.html": {
     "name": "Посланниця: історія Жанни д&#039;Арк",
     "eng_name": "Jeanne d'Arc",
@@ -8449,6 +8449,15 @@
     "imdb_id": null,
     "ashdi": "vod/17053",
     "tortuga": null
+  },
+  "29-auditor.html": {
+    "name": "Аудитор",
+    "eng_name": "The Accountant",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/3025",
+    "tortuga": "vod/6830"
   },
   "7638-gurren-lagann.html": {
     "name": "Ґуррен Лаґанн",
@@ -8972,15 +8981,6 @@
     "ashdi": null,
     "tortuga": "vod/82180"
   },
-  "137-fantastichna-chetvirka.html": {
-    "name": "Фантастична четвірка",
-    "eng_name": "Fantastic Four",
-    "year": "2015",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/7203",
-    "tortuga": "vod/30653"
-  },
   "4117-epidemiya.html": {
     "name": "Епідемія",
     "eng_name": "Los últimos días",
@@ -8989,6 +8989,15 @@
     "imdb_id": null,
     "ashdi": "vod/76258",
     "tortuga": "vod/57887"
+  },
+  "137-fantastichna-chetvirka.html": {
+    "name": "Фантастична четвірка",
+    "eng_name": "Fantastic Four",
+    "year": "2015",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/7203",
+    "tortuga": "vod/30653"
   },
   "7553-irlandske-bazhannya.html": {
     "name": "Ірландське бажання",
@@ -9026,15 +9035,6 @@
     "ashdi": null,
     "tortuga": "vod/86434"
   },
-  "480-duzhchyj.html": {
-    "name": "Дужчий",
-    "eng_name": "Stronger",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/8450",
-    "tortuga": "vod/15658"
-  },
   "488-odruzhys-zi-mnoju-chuvak.html": {
     "name": "Одружись зі мною, чувак",
     "eng_name": "Épouse-moi mon pote",
@@ -9043,6 +9043,15 @@
     "imdb_id": null,
     "ashdi": "vod/14160",
     "tortuga": "vod/15874"
+  },
+  "480-duzhchyj.html": {
+    "name": "Дужчий",
+    "eng_name": "Stronger",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/8450",
+    "tortuga": "vod/15658"
   },
   "4785-chorne-ta-synye.html": {
     "name": "Чорне та синє",
@@ -9089,15 +9098,6 @@
     "ashdi": null,
     "tortuga": "vod/52753"
   },
-  "91-voskresinnja.html": {
-    "name": "Воскресіння",
-    "eng_name": "Risen",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": null,
-    "tortuga": "vod/29534"
-  },
   "220-ideal.html": {
     "name": "Ідеаль",
     "eng_name": "L'idéal",
@@ -9106,6 +9106,15 @@
     "imdb_id": null,
     "ashdi": "vod/2099",
     "tortuga": "vod/25745"
+  },
+  "91-voskresinnja.html": {
+    "name": "Воскресіння",
+    "eng_name": "Risen",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": null,
+    "tortuga": "vod/29534"
   },
   "6368-ostanniy-cholovik-na-zemli.html": {
     "name": "Останній чоловік на Землі",
@@ -17009,15 +17018,6 @@
     "ashdi": "vod/20044",
     "tortuga": null
   },
-  "144-pikseli.html": {
-    "name": "Пікселі",
-    "eng_name": "Pixels",
-    "year": "2015",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/13608",
-    "tortuga": "vod/19515"
-  },
   "6096-tilo-dviynyk.html": {
     "name": "Тіло-двійник",
     "eng_name": "Body Double",
@@ -17026,6 +17026,15 @@
     "imdb_id": null,
     "ashdi": "vod/81246",
     "tortuga": "vod/51191"
+  },
+  "144-pikseli.html": {
+    "name": "Пікселі",
+    "eng_name": "Pixels",
+    "year": "2015",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/13608",
+    "tortuga": "vod/19515"
   },
   "3833-doschovyy-den-v-nyu-jorku.html": {
     "name": "Дощовий день в Нью-Йорку",
@@ -17522,15 +17531,6 @@
     "ashdi": "vod/81735",
     "tortuga": "vod/84251"
   },
-  "533-tjulpanova-lyhomanka.html": {
-    "name": "Тюльпанова лихоманка",
-    "eng_name": "Tulip Fever",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/3589",
-    "tortuga": "vod/11984"
-  },
   "6769-vyhid-cherez-suvenirnu-kramnycyu.html": {
     "name": "Вихід через сувенірну крамницю",
     "eng_name": "Exit Through the Gift Shop",
@@ -17539,6 +17539,15 @@
     "imdb_id": null,
     "ashdi": "vod/100660",
     "tortuga": "vod/91208"
+  },
+  "533-tjulpanova-lyhomanka.html": {
+    "name": "Тюльпанова лихоманка",
+    "eng_name": "Tulip Fever",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/3589",
+    "tortuga": "vod/11984"
   },
   "6021-po-toy-bik.html": {
     "name": "По той бік",
@@ -18143,15 +18152,6 @@
     "ashdi": "vod/81410",
     "tortuga": "vod/84095"
   },
-  "394-charivni-chudovi.html": {
-    "name": "Чарівні чудові",
-    "eng_name": "This Beautiful Fantastic",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/17453",
-    "tortuga": "vod/29536"
-  },
   "7275-koshmar-za-stinoyu.html": {
     "name": "Кошмар за стіною",
     "eng_name": "Derrière les murs",
@@ -18160,6 +18160,15 @@
     "imdb_id": null,
     "ashdi": null,
     "tortuga": "vod/76051"
+  },
+  "394-charivni-chudovi.html": {
+    "name": "Чарівні чудові",
+    "eng_name": "This Beautiful Fantastic",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/17453",
+    "tortuga": "vod/29536"
   },
   "7394-pyatnycya-13-te-chastyna-8-dzheyson-zahoplyuye-mangetten.html": {
     "name": "П’ятниця 13-те: Частина 8. Джейсон захоплює Мангеттен",
@@ -19430,15 +19439,6 @@
     "ashdi": "vod/17440",
     "tortuga": "vod/80292"
   },
-  "519-gora-mizh-namy.html": {
-    "name": "Гора між нами",
-    "eng_name": "The Mountain Between Us",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/14300",
-    "tortuga": "vod/8709"
-  },
   "2880-bosonizh-mistom.html": {
     "name": "Босоніж містом",
     "eng_name": "Barefoot",
@@ -19447,6 +19447,15 @@
     "imdb_id": null,
     "ashdi": "vod/17994",
     "tortuga": "vod/33183"
+  },
+  "519-gora-mizh-namy.html": {
+    "name": "Гора між нами",
+    "eng_name": "The Mountain Between Us",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/14300",
+    "tortuga": "vod/8709"
   },
   "4646-klaustrofoby-novyy-riven.html": {
     "name": "Клаустрофоби: Новий рівень",
@@ -19727,15 +19736,6 @@
     "ashdi": "vod/10803",
     "tortuga": "vod/85628"
   },
-  "8762-misto-strahu.html": {
-    "name": "Місто страху",
-    "eng_name": "Salve Geral: Irmandade / State of Fear",
-    "year": "2026",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/236957",
-    "tortuga": null
-  },
   "3566-avariya-dorogoyu.html": {
     "name": "Аварія / Дорогою",
     "eng_name": "Breakdown",
@@ -19743,6 +19743,15 @@
     "kp_id": null,
     "imdb_id": null,
     "ashdi": "vod/20188",
+    "tortuga": null
+  },
+  "8762-misto-strahu.html": {
+    "name": "Місто страху",
+    "eng_name": "Salve Geral: Irmandade / State of Fear",
+    "year": "2026",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/236957",
     "tortuga": null
   },
   "1148-golyy-pistolet-2-zapah-strahu.html": {
@@ -20150,15 +20159,6 @@
     "ashdi": null,
     "tortuga": "embed/2077"
   },
-  "600-u-lizhku-z-viktoriyeyu.html": {
-    "name": "У ліжку з Вікторією",
-    "eng_name": "Victoria",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/16632",
-    "tortuga": "vod/26711"
-  },
   "7456-vseredyni-gerberta-klankerdanka.html": {
     "name": "Всередині Герберта Кланкерданка",
     "eng_name": "The Mind of Herbert Clunkerdunk",
@@ -20167,6 +20167,15 @@
     "imdb_id": null,
     "ashdi": "serial/3220",
     "tortuga": "embed/2127"
+  },
+  "600-u-lizhku-z-viktoriyeyu.html": {
+    "name": "У ліжку з Вікторією",
+    "eng_name": "Victoria",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/16632",
+    "tortuga": "vod/26711"
   },
   "7011-coci.html": {
     "name": "Цоці",
@@ -21122,15 +21131,6 @@
     "ashdi": "vod/58232",
     "tortuga": "vod/49042"
   },
-  "191-movchannja.html": {
-    "name": "Мовчання",
-    "eng_name": "Silence",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/22720",
-    "tortuga": "vod/10034"
-  },
   "6284-bog-ce-kulya.html": {
     "name": "Бог – це куля",
     "eng_name": "God Is a Bullet",
@@ -21139,6 +21139,15 @@
     "imdb_id": null,
     "ashdi": "vod/97175",
     "tortuga": "vod/92892"
+  },
+  "191-movchannja.html": {
+    "name": "Мовчання",
+    "eng_name": "Silence",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/22720",
+    "tortuga": "vod/10034"
   },
   "3376-hepi-end.html": {
     "name": "Хепі-енд",
@@ -23570,15 +23579,6 @@
     "ashdi": "vod/71450",
     "tortuga": "vod/35403"
   },
-  "52-pele-narodzhennja-legendi.html": {
-    "name": "Пеле: Народження легенди",
-    "eng_name": "Pelé: Birth of a Legend",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/14348",
-    "tortuga": null
-  },
   "2915-golgofa.html": {
     "name": "Голгофа",
     "eng_name": "Calvary",
@@ -23596,6 +23596,15 @@
     "imdb_id": null,
     "ashdi": "vod/18865",
     "tortuga": "vod/38526"
+  },
+  "52-pele-narodzhennja-legendi.html": {
+    "name": "Пеле: Народження легенди",
+    "eng_name": "Pelé: Birth of a Legend",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/14348",
+    "tortuga": null
   },
   "5075-yak-bethoven-nasliduyuchy-bethovena.html": {
     "name": "Як Бетховен / Наслідуючи Бетховена",
@@ -23795,15 +23804,6 @@
     "ashdi": "serial/2688",
     "tortuga": "embed/1980"
   },
-  "259-sherlok.html": {
-    "name": "Шерлок",
-    "eng_name": "Sherlock",
-    "year": "2010",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "serial/18",
-    "tortuga": "embed/54"
-  },
   "1610-dity-shpyguniv.html": {
     "name": "Діти Шпигунів",
     "eng_name": "Spy Kids",
@@ -23821,6 +23821,15 @@
     "imdb_id": null,
     "ashdi": "vod/20729",
     "tortuga": "vod/47141"
+  },
+  "259-sherlok.html": {
+    "name": "Шерлок",
+    "eng_name": "Sherlock",
+    "year": "2010",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "serial/18",
+    "tortuga": "embed/54"
   },
   "7454-bezsoromni.html": {
     "name": "Безсоромні",
@@ -24866,6 +24875,15 @@
     "ashdi": "vod/62452",
     "tortuga": "vod/74655"
   },
+  "8766-gostri-kartuzy-bezsmertnyy.html": {
+    "name": "Гострі картузи: Безсмертний",
+    "eng_name": "Peaky Blinders: The Immortal Man",
+    "year": "2026",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/243429",
+    "tortuga": "vod/123946"
+  },
   "1518-lyudy-iks.html": {
     "name": "Люди Ікс",
     "eng_name": "X-Men",
@@ -25109,15 +25127,6 @@
     "ashdi": "vod/70471",
     "tortuga": "vod/65310"
   },
-  "84-za-krov-do-peremogi.html": {
-    "name": "За кров до перемоги",
-    "eng_name": "Bleed for This",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/8378",
-    "tortuga": "vod/16743"
-  },
   "6633-asoka.html": {
     "name": "Асока",
     "eng_name": "Ahsoka",
@@ -25126,6 +25135,15 @@
     "imdb_id": null,
     "ashdi": "serial/2746",
     "tortuga": "embed/2004"
+  },
+  "84-za-krov-do-peremogi.html": {
+    "name": "За кров до перемоги",
+    "eng_name": "Bleed for This",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/8378",
+    "tortuga": "vod/16743"
   },
   "7504-nevrazlyvyy.html": {
     "name": "Невразливий",
@@ -25289,15 +25307,6 @@
     "ashdi": "serial/718",
     "tortuga": "embed/791"
   },
-  "296-hobbit-pustka-smoga.html": {
-    "name": "Хоббіт: Пустка Смоґа",
-    "eng_name": "The Hobbit: The Desolation of Smaug",
-    "year": "2013",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/590",
-    "tortuga": "vod/6935"
-  },
   "4754-koroleva-pusteli.html": {
     "name": "Королева пустелі",
     "eng_name": "Queen of the Desert",
@@ -25306,6 +25315,15 @@
     "imdb_id": null,
     "ashdi": "vod/61341",
     "tortuga": "vod/76522"
+  },
+  "296-hobbit-pustka-smoga.html": {
+    "name": "Хоббіт: Пустка Смоґа",
+    "eng_name": "The Hobbit: The Desolation of Smaug",
+    "year": "2013",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/590",
+    "tortuga": "vod/6935"
   },
   "2065-pyla-4.html": {
     "name": "Пила 4",
@@ -25550,15 +25568,6 @@
     "ashdi": "vod/16132",
     "tortuga": "vod/49582"
   },
-  "333-ostriv-sobak.html": {
-    "name": "Острів собак",
-    "eng_name": "Isle of Dogs",
-    "year": "2018",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/6072",
-    "tortuga": "vod/1235"
-  },
   "3176-kull-zavoyovnyk.html": {
     "name": "Кулл - Завойовник",
     "eng_name": "Kull the Conqueror",
@@ -25567,6 +25576,15 @@
     "imdb_id": null,
     "ashdi": "vod/14901",
     "tortuga": null
+  },
+  "333-ostriv-sobak.html": {
+    "name": "Острів собак",
+    "eng_name": "Isle of Dogs",
+    "year": "2018",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/6072",
+    "tortuga": "vod/1235"
   },
   "3676-vovky.html": {
     "name": "Вовки",
@@ -25712,15 +25730,6 @@
     "ashdi": "vod/19801",
     "tortuga": "vod/33876"
   },
-  "414-dzhumandzhi-poklyk-dzhungliv.html": {
-    "name": "Джуманджі: Поклик джунглів",
-    "eng_name": "Jumanji: Welcome to the Jungle",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/242",
-    "tortuga": "vod/5586"
-  },
   "910-1984.html": {
     "name": "1984",
     "eng_name": "Nineteen Eighty-Four",
@@ -25729,6 +25738,15 @@
     "imdb_id": null,
     "ashdi": "vod/16171",
     "tortuga": "vod/56322"
+  },
+  "414-dzhumandzhi-poklyk-dzhungliv.html": {
+    "name": "Джуманджі: Поклик джунглів",
+    "eng_name": "Jumanji: Welcome to the Jungle",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/242",
+    "tortuga": "vod/5586"
   },
   "4405-korobka.html": {
     "name": "Коробка",
@@ -28880,15 +28898,6 @@
     "ashdi": "vod/35717",
     "tortuga": "vod/17299"
   },
-  "302-nestrymni-3.html": {
-    "name": "Нестримні 3",
-    "eng_name": "The Expendables 3",
-    "year": "2014",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/76996",
-    "tortuga": "vod/20170"
-  },
   "2238-dzhonni-d.html": {
     "name": "Джонні Д.",
     "eng_name": "Public Enemies",
@@ -28906,6 +28915,15 @@
     "imdb_id": null,
     "ashdi": "vod/57697",
     "tortuga": "vod/75629"
+  },
+  "302-nestrymni-3.html": {
+    "name": "Нестримні 3",
+    "eng_name": "The Expendables 3",
+    "year": "2014",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/76996",
+    "tortuga": "vod/20170"
   },
   "3387-larri-kraun.html": {
     "name": "Ларрі Краун",
@@ -29618,15 +29636,6 @@
     "ashdi": null,
     "tortuga": "vod/86879"
   },
-  "167-vidzha-pohodzhennja-zla.html": {
-    "name": "Віджа: Походження зла",
-    "eng_name": "Ouija: Origin of Evil",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/3195",
-    "tortuga": "vod/70027"
-  },
   "5851-bilshe-za-zhyttya.html": {
     "name": "Більше за життя",
     "eng_name": "Larger Than Life",
@@ -29635,6 +29644,15 @@
     "imdb_id": null,
     "ashdi": "vod/17916",
     "tortuga": "vod/46487"
+  },
+  "167-vidzha-pohodzhennja-zla.html": {
+    "name": "Віджа: Походження зла",
+    "eng_name": "Ouija: Origin of Evil",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/3195",
+    "tortuga": "vod/70027"
   },
   "4703-oficer-i-shpygun.html": {
     "name": "Офіцер і шпигун",
@@ -32021,15 +32039,6 @@
     "ashdi": "serial/2168",
     "tortuga": "embed/1782"
   },
-  "613-neonovyy-demon.html": {
-    "name": "Неоновий демон",
-    "eng_name": "The Neon Demon",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/16084",
-    "tortuga": "vod/11529"
-  },
   "1612-spokusa.html": {
     "name": "Спокуса",
     "eng_name": "Original Sin",
@@ -32038,6 +32047,15 @@
     "imdb_id": null,
     "ashdi": "vod/19467",
     "tortuga": "vod/81519"
+  },
+  "613-neonovyy-demon.html": {
+    "name": "Неоновий демон",
+    "eng_name": "The Neon Demon",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/16084",
+    "tortuga": "vod/11529"
   },
   "4871-serceyid-povernennya-geroya.html": {
     "name": "Серцеїд: Повернення героя",
@@ -32462,15 +32480,6 @@
     "ashdi": "vod/89173",
     "tortuga": "vod/86780"
   },
-  "108-troli.html": {
-    "name": "Тролі",
-    "eng_name": "Trolls",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/6078",
-    "tortuga": "vod/45538"
-  },
   "5471-myli-oshukanky-pervorodnyy-grih.html": {
     "name": "Милі ошуканки: Первородний гріх",
     "eng_name": "Pretty Little Liars: Original Sin",
@@ -32479,6 +32488,15 @@
     "imdb_id": null,
     "ashdi": "serial/2156",
     "tortuga": "embed/1789"
+  },
+  "108-troli.html": {
+    "name": "Тролі",
+    "eng_name": "Trolls",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/6078",
+    "tortuga": "vod/45538"
   },
   "781-persona.html": {
     "name": "Персона",
@@ -32858,15 +32876,6 @@
     "ashdi": "vod/21024",
     "tortuga": "vod/73843"
   },
-  "116-vtecha-z-shoushenka.html": {
-    "name": "Втеча з Шоушенка",
-    "eng_name": "The Shawshank Redemption",
-    "year": "1994",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/556",
-    "tortuga": "vod/1141"
-  },
   "1955-povernennya.html": {
     "name": "Повернення",
     "eng_name": "Volver",
@@ -32875,6 +32884,15 @@
     "imdb_id": null,
     "ashdi": "vod/16291",
     "tortuga": null
+  },
+  "116-vtecha-z-shoushenka.html": {
+    "name": "Втеча з Шоушенка",
+    "eng_name": "The Shawshank Redemption",
+    "year": "1994",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/556",
+    "tortuga": "vod/1141"
   },
   "593-zagublene-ta-znaydene.html": {
     "name": "Загублене та знайдене",
@@ -34712,15 +34730,6 @@
     "ashdi": "vod/22688",
     "tortuga": "vod/83727"
   },
-  "420-dzhumandzhi.html": {
-    "name": "Джуманджі",
-    "eng_name": "Jumanji",
-    "year": "1995",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/9624",
-    "tortuga": "vod/18044"
-  },
   "1728-shybaygolova.html": {
     "name": "Шибайголова",
     "eng_name": "Daredevil",
@@ -34729,6 +34738,15 @@
     "imdb_id": null,
     "ashdi": "vod/13492",
     "tortuga": "vod/73828"
+  },
+  "420-dzhumandzhi.html": {
+    "name": "Джуманджі",
+    "eng_name": "Jumanji",
+    "year": "1995",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/9624",
+    "tortuga": "vod/18044"
   },
   "1862-vodne-zhyttya-zi-stivom-zissu.html": {
     "name": "Водне життя зі Стівом Зіссу",
@@ -35405,15 +35423,6 @@
     "ashdi": "vod/71393",
     "tortuga": "vod/80414"
   },
-  "46-kohannja-ne-za-rozmirom.html": {
-    "name": "Кохання не за розміром",
-    "eng_name": "Un homme à la hauteur",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/17971",
-    "tortuga": "vod/15322"
-  },
   "5807-razom-z-kistkamy.html": {
     "name": "Разом з кістками",
     "eng_name": "Bones and All",
@@ -35422,6 +35431,15 @@
     "imdb_id": null,
     "ashdi": "vod/90238",
     "tortuga": "vod/87507"
+  },
+  "46-kohannja-ne-za-rozmirom.html": {
+    "name": "Кохання не за розміром",
+    "eng_name": "Un homme à la hauteur",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/17971",
+    "tortuga": "vod/15322"
   },
   "4681-susidy-zverhu.html": {
     "name": "Сусіди зверху",
@@ -35801,15 +35819,6 @@
     "ashdi": "vod/19456",
     "tortuga": "vod/33726"
   },
-  "456-shovysche.html": {
-    "name": "Сховище",
-    "eng_name": "The Vault",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/14853",
-    "tortuga": "vod/61442"
-  },
   "6820-braty-blyuz-2000.html": {
     "name": "Брати Блюз 2000",
     "eng_name": "Blues Brothers 2000",
@@ -35818,6 +35827,15 @@
     "imdb_id": null,
     "ashdi": "vod/21396",
     "tortuga": "vod/90220"
+  },
+  "456-shovysche.html": {
+    "name": "Сховище",
+    "eng_name": "The Vault",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/14853",
+    "tortuga": "vod/61442"
   },
   "5396-cherchyl.html": {
     "name": "Черчиль",
@@ -36017,15 +36035,6 @@
     "ashdi": "vod/18893",
     "tortuga": "vod/77687"
   },
-  "524-dyhaj.html": {
-    "name": "Дихай",
-    "eng_name": "Breathe",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/8610",
-    "tortuga": "vod/15339"
-  },
   "4044-napoleon.html": {
     "name": "Наполеон",
     "eng_name": "Napoleon",
@@ -36034,6 +36043,15 @@
     "imdb_id": null,
     "ashdi": "serial/769",
     "tortuga": "embed/194"
+  },
+  "524-dyhaj.html": {
+    "name": "Дихай",
+    "eng_name": "Breathe",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/8610",
+    "tortuga": "vod/15339"
   },
   "1224-bezsonnya-v-sietli.html": {
     "name": "Безсоння в Сіетлі",
@@ -36449,15 +36467,6 @@
     "ashdi": "vod/14247",
     "tortuga": "vod/28118"
   },
-  "78-svitske-zhittja.html": {
-    "name": "Світське життя",
-    "eng_name": "Café Society",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/16090",
-    "tortuga": "vod/12971"
-  },
   "2500-hranytel-chasu.html": {
     "name": "Хранитель часу",
     "eng_name": "Hugo",
@@ -36466,6 +36475,15 @@
     "imdb_id": null,
     "ashdi": "vod/7198",
     "tortuga": "vod/39145"
+  },
+  "78-svitske-zhittja.html": {
+    "name": "Світське життя",
+    "eng_name": "Café Society",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/16090",
+    "tortuga": "vod/12971"
   },
   "2770-lok.html": {
     "name": "Лок",
@@ -36593,15 +36611,6 @@
     "ashdi": "serial/2639",
     "tortuga": "embed/1981"
   },
-  "511-komatoznyky.html": {
-    "name": "Коматозники",
-    "eng_name": "Flatliners",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/14393",
-    "tortuga": "vod/12506"
-  },
   "4267-novyi-poryadok.html": {
     "name": "Новий порядок",
     "eng_name": "Nuevo orden",
@@ -36610,6 +36619,15 @@
     "imdb_id": null,
     "ashdi": "vod/50205",
     "tortuga": "vod/71318"
+  },
+  "511-komatoznyky.html": {
+    "name": "Коматозники",
+    "eng_name": "Flatliners",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/14393",
+    "tortuga": "vod/12506"
   },
   "3254-fotozbilshennya.html": {
     "name": "Фотозбільшення",
@@ -38105,15 +38123,6 @@
     "ashdi": "vod/289",
     "tortuga": "vod/9540"
   },
-  "152-divchina-u-potjagu.html": {
-    "name": "Дівчина у потягу",
-    "eng_name": "The Girl on the Train",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/6755",
-    "tortuga": "vod/7500"
-  },
   "1396-odissey.html": {
     "name": "Одіссей",
     "eng_name": "The Odyssey",
@@ -38122,6 +38131,15 @@
     "imdb_id": null,
     "ashdi": "vod/8413",
     "tortuga": null
+  },
+  "152-divchina-u-potjagu.html": {
+    "name": "Дівчина у потягу",
+    "eng_name": "The Girl on the Train",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/6755",
+    "tortuga": "vod/7500"
   },
   "1966-v-oznachaye-vendetta.html": {
     "name": "«V» означає Вендетта",
@@ -38411,15 +38429,6 @@
     "ashdi": "vod/57287",
     "tortuga": "vod/74952"
   },
-  "490-pyatdesyat-vidtinkiv-sirogo.html": {
-    "name": "П&#039;ятдесят відтінків сірого",
-    "eng_name": "Fifty Shades of Grey",
-    "year": "2015",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/519",
-    "tortuga": "vod/14974"
-  },
   "3798-istoriya-igrashok-2.html": {
     "name": "Історія іграшок 2",
     "eng_name": "Toy Story 2",
@@ -38428,6 +38437,15 @@
     "imdb_id": null,
     "ashdi": "vod/4156",
     "tortuga": "vod/14031"
+  },
+  "490-pyatdesyat-vidtinkiv-sirogo.html": {
+    "name": "П&#039;ятдесят відтінків сірого",
+    "eng_name": "Fifty Shades of Grey",
+    "year": "2015",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/519",
+    "tortuga": "vod/14974"
   },
   "2415-submaryna.html": {
     "name": "Субмарина",
@@ -40112,15 +40130,6 @@
     "ashdi": "vod/116812",
     "tortuga": "vod/94602"
   },
-  "312-zavzjati-shahrayi.html": {
-    "name": "Завзяті шахраї",
-    "eng_name": "The Con Is On",
-    "year": "2018",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/328",
-    "tortuga": "vod/14363"
-  },
   "1676-korol-vechirok.html": {
     "name": "Король вечірок",
     "eng_name": "National Lampoon’s Van Wilder",
@@ -40129,6 +40138,15 @@
     "imdb_id": null,
     "ashdi": "vod/62245",
     "tortuga": "vod/77647"
+  },
+  "312-zavzjati-shahrayi.html": {
+    "name": "Завзяті шахраї",
+    "eng_name": "The Con Is On",
+    "year": "2018",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/328",
+    "tortuga": "vod/14363"
   },
   "407-dzhek-richer-ne-vidstupaj.html": {
     "name": "Джек Річер: Не відступай",
@@ -40337,15 +40355,6 @@
     "ashdi": "vod/16080",
     "tortuga": null
   },
-  "562-genocyd-girki-zhnyva-girkyy-vrozhay-vrozhay-dyyavola.html": {
-    "name": "Геноцид: Гіркі жнива / Гіркий врожай / Врожай диявола",
-    "eng_name": "Bitter Harvest",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/567",
-    "tortuga": "vod/20939"
-  },
   "5734-gotel-merigold-zaselennya-tryvaye.html": {
     "name": "Готель «Меріголд». Заселення триває",
     "eng_name": "The Second Best Exotic Marigold Hotel",
@@ -40354,6 +40363,15 @@
     "imdb_id": null,
     "ashdi": "vod/17974",
     "tortuga": "vod/39454"
+  },
+  "562-genocyd-girki-zhnyva-girkyy-vrozhay-vrozhay-dyyavola.html": {
+    "name": "Геноцид: Гіркі жнива / Гіркий врожай / Врожай диявола",
+    "eng_name": "Bitter Harvest",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/567",
+    "tortuga": "vod/20939"
   },
   "3156-chotyry-pera.html": {
     "name": "Чотири пера",
@@ -41732,15 +41750,6 @@
     "ashdi": "vod/475",
     "tortuga": "vod/49519"
   },
-  "366-dostukatysya-do-nebes.html": {
-    "name": "Достукатися до небес",
-    "eng_name": "Knockin' on Heaven's Door",
-    "year": "1997",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/2224",
-    "tortuga": "vod/9448"
-  },
   "7534-kryhitka-rubi.html": {
     "name": "Крихітка Рубі",
     "eng_name": "Baby Ruby",
@@ -41749,6 +41758,15 @@
     "imdb_id": null,
     "ashdi": "vod/121135",
     "tortuga": "vod/95639"
+  },
+  "366-dostukatysya-do-nebes.html": {
+    "name": "Достукатися до небес",
+    "eng_name": "Knockin' on Heaven's Door",
+    "year": "1997",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/2224",
+    "tortuga": "vod/9448"
   },
   "1609-intuyiciya.html": {
     "name": "Інтуїція",
@@ -42299,15 +42317,6 @@
     "ashdi": "serial/915",
     "tortuga": "embed/1076"
   },
-  "367-kryminalne-chtyvo.html": {
-    "name": "Кримінальне чтиво",
-    "eng_name": "Pulp Fiction",
-    "year": "1994",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/2401",
-    "tortuga": "vod/66861"
-  },
   "7751-zapadnya.html": {
     "name": "Западня",
     "eng_name": "Trap",
@@ -42316,6 +42325,15 @@
     "imdb_id": null,
     "ashdi": "vod/140375",
     "tortuga": "vod/101111"
+  },
+  "367-kryminalne-chtyvo.html": {
+    "name": "Кримінальне чтиво",
+    "eng_name": "Pulp Fiction",
+    "year": "1994",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/2401",
+    "tortuga": "vod/66861"
   },
   "6333-forpost.html": {
     "name": "Форпост",
@@ -46547,15 +46565,6 @@
     "ashdi": "vod/2085",
     "tortuga": "vod/53101"
   },
-  "155-nezvorotnist.html": {
-    "name": "Незворотність",
-    "eng_name": "Irréversible",
-    "year": "2002",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/13410",
-    "tortuga": "vod/56703"
-  },
   "2027-10-krokiv-do-uspihu.html": {
     "name": "10 кроків до успіху",
     "eng_name": "10 Items or Less",
@@ -46564,6 +46573,15 @@
     "imdb_id": null,
     "ashdi": "vod/17011",
     "tortuga": "vod/75659"
+  },
+  "155-nezvorotnist.html": {
+    "name": "Незворотність",
+    "eng_name": "Irréversible",
+    "year": "2002",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/13410",
+    "tortuga": "vod/56703"
   },
   "4925-bu-suchko.html": {
     "name": "Бу, сучко",
@@ -49418,6 +49436,15 @@
     "ashdi": "vod/73450",
     "tortuga": "vod/82841"
   },
+  "8768-mayk-i-nik-i-nik-i-elis.html": {
+    "name": "Майк і Нік і Нік і Еліс",
+    "eng_name": "Mike &amp; Nick &amp; Nick &amp; Alice",
+    "year": "2026",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/246249",
+    "tortuga": "vod/124555"
+  },
   "3937-temni-materiyi-temni-pochatky-piranyi-tmy.html": {
     "name": "Темні матерії / Темні початки / Піраньї тьми",
     "eng_name": "His Dark Materials",
@@ -51461,15 +51488,6 @@
     "ashdi": "vod/13744",
     "tortuga": "vod/34369"
   },
-  "381-ostriv-proklyatyh.html": {
-    "name": "Острів проклятих",
-    "eng_name": "Shutter Island",
-    "year": "2010",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/4060",
-    "tortuga": "vod/9108"
-  },
   "1372-pyatyy-element.html": {
     "name": "П&#039;ятий елемент",
     "eng_name": "The Fifth Element",
@@ -51478,6 +51496,15 @@
     "imdb_id": null,
     "ashdi": "vod/318",
     "tortuga": "vod/9776"
+  },
+  "381-ostriv-proklyatyh.html": {
+    "name": "Острів проклятих",
+    "eng_name": "Shutter Island",
+    "year": "2010",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/4060",
+    "tortuga": "vod/9108"
   },
   "6692-ubyvstva-z-lystivkamy.html": {
     "name": "Убивства з листівками",
@@ -53675,15 +53702,6 @@
     "ashdi": "vod/14845",
     "tortuga": "vod/73416"
   },
-  "6-chudova-simka.html": {
-    "name": "Чудова сімка",
-    "eng_name": "The Magnificent Seven",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/2398",
-    "tortuga": "vod/9442"
-  },
   "3760-zlo.html": {
     "name": "Зло",
     "eng_name": "Malicious",
@@ -53692,6 +53710,15 @@
     "imdb_id": null,
     "ashdi": "vod/13413",
     "tortuga": "vod/55264"
+  },
+  "6-chudova-simka.html": {
+    "name": "Чудова сімка",
+    "eng_name": "The Magnificent Seven",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/2398",
+    "tortuga": "vod/9442"
   },
   "6401-blekpul.html": {
     "name": "Блекпул",
@@ -54692,15 +54719,6 @@
     "ashdi": "vod/21044",
     "tortuga": null
   },
-  "607-u-vsomu-vynen-yenot.html": {
-    "name": "У всьому винен єнот",
-    "eng_name": "Wakefield",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/18626",
-    "tortuga": "vod/16485"
-  },
   "2048-korolivstvo.html": {
     "name": "Королівство",
     "eng_name": "The Kingdom",
@@ -54709,6 +54727,15 @@
     "imdb_id": null,
     "ashdi": "vod/17421",
     "tortuga": "vod/74883"
+  },
+  "607-u-vsomu-vynen-yenot.html": {
+    "name": "У всьому винен єнот",
+    "eng_name": "Wakefield",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/18626",
+    "tortuga": "vod/16485"
   },
   "2292-prymara.html": {
     "name": "Примара",
@@ -56807,15 +56834,6 @@
     "ashdi": "vod/17989",
     "tortuga": "vod/38530"
   },
-  "304-pershyj-mesnyk.html": {
-    "name": "Перший месник",
-    "eng_name": "Captain America: The First Avenger",
-    "year": "2011",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/246",
-    "tortuga": "vod/6836"
-  },
   "2318-koko-do-shanel.html": {
     "name": "Коко до Шанель",
     "eng_name": "Coco avant Chanel",
@@ -56824,6 +56842,15 @@
     "imdb_id": null,
     "ashdi": "vod/14036",
     "tortuga": "vod/74693"
+  },
+  "304-pershyj-mesnyk.html": {
+    "name": "Перший месник",
+    "eng_name": "Captain America: The First Avenger",
+    "year": "2011",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/246",
+    "tortuga": "vod/6836"
   },
   "571-macho-i-botan-2-ukr.html": {
     "name": "Мачо і ботан 2",
@@ -56888,15 +56915,6 @@
     "ashdi": "vod/10751",
     "tortuga": "vod/79425"
   },
-  "590-kreyser-indianapolis.html": {
-    "name": "Крейсер «Індіанаполіс»",
-    "eng_name": "USS Indianapolis: Men of Courage",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/53982",
-    "tortuga": "vod/25729"
-  },
   "3637-fred-klaus-brat-santy.html": {
     "name": "Фред Клаус, брат Санти",
     "eng_name": "Fred Claus",
@@ -56905,6 +56923,15 @@
     "imdb_id": null,
     "ashdi": "vod/961",
     "tortuga": "vod/8707"
+  },
+  "590-kreyser-indianapolis.html": {
+    "name": "Крейсер «Індіанаполіс»",
+    "eng_name": "USS Indianapolis: Men of Courage",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/53982",
+    "tortuga": "vod/25729"
   },
   "1795-aleksandr.html": {
     "name": "Александр",
@@ -60470,15 +60497,6 @@
     "ashdi": "vod/14546",
     "tortuga": "vod/36485"
   },
-  "255-tron-spadok.html": {
-    "name": "Трон: Спадок",
-    "eng_name": "TRON",
-    "year": "2010",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/2853",
-    "tortuga": "vod/67163"
-  },
   "7170-emmanuel-4.html": {
     "name": "Еммануель 4",
     "eng_name": "Emmanuelle IV",
@@ -60487,6 +60505,15 @@
     "imdb_id": null,
     "ashdi": "vod/59440",
     "tortuga": "vod/74732"
+  },
+  "255-tron-spadok.html": {
+    "name": "Трон: Спадок",
+    "eng_name": "TRON",
+    "year": "2010",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/2853",
+    "tortuga": "vod/67163"
   },
   "3778-kin-bodzhek.html": {
     "name": "Кінь БоДжек",
@@ -62324,15 +62351,6 @@
     "ashdi": "serial/1027",
     "tortuga": "embed/1175"
   },
-  "538-vono.html": {
-    "name": "Воно",
-    "eng_name": "It",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/248",
-    "tortuga": "vod/1037"
-  },
   "7060-prepodobnyy.html": {
     "name": "Преподобний",
     "eng_name": "Rev.",
@@ -62341,6 +62359,15 @@
     "imdb_id": null,
     "ashdi": "serial/3025",
     "tortuga": "embed/2059"
+  },
+  "538-vono.html": {
+    "name": "Воно",
+    "eng_name": "It",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/248",
+    "tortuga": "vod/1037"
   },
   "5751-ne-te-misce.html": {
     "name": "Не те місце",
@@ -62621,15 +62648,6 @@
     "ashdi": "serial/2561",
     "tortuga": "embed/1943"
   },
-  "441-budynok-slovo.html": {
-    "name": "Будинок «Слово»",
-    "eng_name": "Budynok 'Slovo'",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": null,
-    "tortuga": "vod/75525"
-  },
   "1246-shvydkist.html": {
     "name": "Швидкість",
     "eng_name": "Speed",
@@ -62638,6 +62656,15 @@
     "imdb_id": null,
     "ashdi": "vod/13774",
     "tortuga": "vod/50223"
+  },
+  "441-budynok-slovo.html": {
+    "name": "Будинок «Слово»",
+    "eng_name": "Budynok 'Slovo'",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": null,
+    "tortuga": "vod/75525"
   },
   "2800-dim-myle-peklo.html": {
     "name": "Дім, миле пекло",
@@ -63368,15 +63395,6 @@
     "ashdi": "vod/13488",
     "tortuga": "vod/72755"
   },
-  "625-zoryani-viyny-epizod-vi-povernennya-dzhedaya.html": {
-    "name": "Зоряні війни: Епізод VI - Повернення Джедая",
-    "eng_name": "Star Wars: Episode VI - Return of the Jedi",
-    "year": "1983",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/431",
-    "tortuga": "vod/8366"
-  },
   "6832-dzvinok-z-mynulogo.html": {
     "name": "Дзвінок з минулого",
     "eng_name": "The Call",
@@ -63385,6 +63403,15 @@
     "imdb_id": null,
     "ashdi": "vod/109657",
     "tortuga": "vod/89929"
+  },
+  "625-zoryani-viyny-epizod-vi-povernennya-dzhedaya.html": {
+    "name": "Зоряні війни: Епізод VI - Повернення Джедая",
+    "eng_name": "Star Wars: Episode VI - Return of the Jedi",
+    "year": "1983",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/431",
+    "tortuga": "vod/8366"
   },
   "1541-yak-grinch-vykrav-rizdvo.html": {
     "name": "Як Грінч викрав Різдво",
@@ -63908,15 +63935,6 @@
     "ashdi": "vod/2533",
     "tortuga": "vod/9929"
   },
-  "453-lystopadovi-zlochynci.html": {
-    "name": "Листопадові злочинці",
-    "eng_name": "November Criminals",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/7204",
-    "tortuga": null
-  },
   "5667-kohannya-pid-domashnim-areshtom.html": {
     "name": "Кохання під домашнім арештом",
     "eng_name": "L'amore a domicilio",
@@ -63925,6 +63943,15 @@
     "imdb_id": null,
     "ashdi": null,
     "tortuga": "vod/86688"
+  },
+  "453-lystopadovi-zlochynci.html": {
+    "name": "Листопадові злочинці",
+    "eng_name": "November Criminals",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/7204",
+    "tortuga": null
   },
   "5646-komanda-mriyi.html": {
     "name": "Команда мрії",
@@ -64565,15 +64592,6 @@
     "ashdi": "vod/35898",
     "tortuga": "vod/47759"
   },
-  "598-eskort.html": {
-    "name": "Ескорт",
-    "eng_name": "The Escort",
-    "year": "2016",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/16305",
-    "tortuga": "vod/29540"
-  },
   "6948-naturalni-upyri.html": {
     "name": "Натуральні упирі",
     "eng_name": "Eat Locals",
@@ -64582,6 +64600,15 @@
     "imdb_id": null,
     "ashdi": "vod/107112",
     "tortuga": "vod/92630"
+  },
+  "598-eskort.html": {
+    "name": "Ескорт",
+    "eng_name": "The Escort",
+    "year": "2016",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/16305",
+    "tortuga": "vod/29540"
   },
   "6165-vcilila.html": {
     "name": "Вціліла",
@@ -65330,15 +65357,6 @@
     "ashdi": "vod/12",
     "tortuga": "vod/6172"
   },
-  "6530-lyubov-z-vidpovidnym-neznayomcem.html": {
-    "name": "Любов з відповідним незнайомцем",
-    "eng_name": "Love with the Proper Stranger",
-    "year": "1963",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/48075",
-    "tortuga": "vod/64849"
-  },
   "6086-muzykant.html": {
     "name": "Музикант",
     "eng_name": "El mariachi",
@@ -65347,6 +65365,15 @@
     "imdb_id": null,
     "ashdi": "vod/16572",
     "tortuga": "vod/50394"
+  },
+  "6530-lyubov-z-vidpovidnym-neznayomcem.html": {
+    "name": "Любов з відповідним незнайомцем",
+    "eng_name": "Love with the Proper Stranger",
+    "year": "1963",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/48075",
+    "tortuga": "vod/64849"
   },
   "7612-lyudy-iks-97.html": {
     "name": "Люди Ікс &#039;97",
@@ -65609,15 +65636,6 @@
     "ashdi": "vod/139510",
     "tortuga": "vod/101187"
   },
-  "3891-chorne-dzerkalo-brandashmyst.html": {
-    "name": "Чорне дзеркало: Брандашмист",
-    "eng_name": "Black Mirror: Bandersnatch",
-    "year": "2018",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/68150",
-    "tortuga": "vod/6341"
-  },
   "2724-nindzya-tin-slozy.html": {
     "name": "Ніндзя: Тінь Сльози",
     "eng_name": "Ninja: Shadow of a Tear",
@@ -65626,6 +65644,15 @@
     "imdb_id": null,
     "ashdi": "vod/16430",
     "tortuga": null
+  },
+  "3891-chorne-dzerkalo-brandashmyst.html": {
+    "name": "Чорне дзеркало: Брандашмист",
+    "eng_name": "Black Mirror: Bandersnatch",
+    "year": "2018",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/68150",
+    "tortuga": "vod/6341"
   },
   "3490-robin-ta-merien.html": {
     "name": "Робін та Меріен",
@@ -65708,15 +65735,6 @@
     "ashdi": "vod/2068",
     "tortuga": "vod/11936"
   },
-  "3132-pashendal-ostanniy-biy.html": {
-    "name": "Пашендаль: Останній бій",
-    "eng_name": "Passchendaele",
-    "year": "2008",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/18136",
-    "tortuga": "vod/85648"
-  },
   "7441-miy-tato.html": {
     "name": "Мій тато",
     "eng_name": "Fatherhood",
@@ -65725,6 +65743,15 @@
     "imdb_id": null,
     "ashdi": "vod/118654",
     "tortuga": "vod/94997"
+  },
+  "3132-pashendal-ostanniy-biy.html": {
+    "name": "Пашендаль: Останній бій",
+    "eng_name": "Passchendaele",
+    "year": "2008",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/18136",
+    "tortuga": "vod/85648"
   },
   "7139-prygody-yao-legenda-savanny.html": {
     "name": "Пригоди Яо / Легенда Саванни",
@@ -65852,15 +65879,6 @@
     "ashdi": null,
     "tortuga": "vod/42662"
   },
-  "244-rozkradachka-grobnic-lara-kroft.html": {
-    "name": "Розкрадачка гробниць: Лара Крофт",
-    "eng_name": "Tomb Raider",
-    "year": "2018",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/361",
-    "tortuga": "vod/65722"
-  },
   "6417-galereya-disney-zoryani-viyny-mandalorec.html": {
     "name": "Галерея Dіsney – Зоряні Війни: Мандалорець",
     "eng_name": "Disney Gallery: Star Wars: The Mandalorian",
@@ -65869,6 +65887,15 @@
     "imdb_id": null,
     "ashdi": "serial/1200",
     "tortuga": "embed/1072"
+  },
+  "244-rozkradachka-grobnic-lara-kroft.html": {
+    "name": "Розкрадачка гробниць: Лара Крофт",
+    "eng_name": "Tomb Raider",
+    "year": "2018",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/361",
+    "tortuga": "vod/65722"
   },
   "2597-surogat.html": {
     "name": "Сурогат",
@@ -65879,15 +65906,6 @@
     "ashdi": "vod/16226",
     "tortuga": "vod/36759"
   },
-  "622-zhartuyu.html": {
-    "name": "Жартую",
-    "eng_name": "Kidding",
-    "year": "2018",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "serial/451",
-    "tortuga": "embed/99"
-  },
   "4577-kosmichni-smittyari.html": {
     "name": "Космічні сміттярі",
     "eng_name": "Seungriho",
@@ -65896,6 +65914,15 @@
     "imdb_id": null,
     "ashdi": "vod/41596",
     "tortuga": "vod/55627"
+  },
+  "622-zhartuyu.html": {
+    "name": "Жартую",
+    "eng_name": "Kidding",
+    "year": "2018",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "serial/451",
+    "tortuga": "embed/99"
   },
   "6737-misiya-kandagar.html": {
     "name": "Місія Кандагар",
@@ -65933,15 +65960,6 @@
     "ashdi": null,
     "tortuga": "vod/54765"
   },
-  "7739-agata-uves-chas.html": {
-    "name": "Аґата увесь час",
-    "eng_name": "Agatha All Along",
-    "year": "2024",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "serial/4155",
-    "tortuga": "embed/2324"
-  },
   "3917-polyarnyy-ekspres.html": {
     "name": "Полярний експрес",
     "eng_name": "The Polar Express",
@@ -65950,6 +65968,15 @@
     "imdb_id": null,
     "ashdi": "vod/1433",
     "tortuga": "vod/8440"
+  },
+  "7739-agata-uves-chas.html": {
+    "name": "Аґата увесь час",
+    "eng_name": "Agatha All Along",
+    "year": "2024",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "serial/4155",
+    "tortuga": "embed/2324"
   },
   "1902-elektra.html": {
     "name": "Електра",
@@ -66041,15 +66068,6 @@
     "ashdi": "vod/3070",
     "tortuga": "vod/45444"
   },
-  "5177-99-budynkiv.html": {
-    "name": "99 будинків",
-    "eng_name": "99 Homes",
-    "year": "2014",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/76474",
-    "tortuga": "vod/81816"
-  },
   "3236-lego-film-2.html": {
     "name": "Лего Фільм 2",
     "eng_name": "The Lego Movie 2: The Second Part",
@@ -66058,6 +66076,15 @@
     "imdb_id": null,
     "ashdi": "vod/4632",
     "tortuga": "vod/1072"
+  },
+  "5177-99-budynkiv.html": {
+    "name": "99 будинків",
+    "eng_name": "99 Homes",
+    "year": "2014",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/76474",
+    "tortuga": "vod/81816"
   },
   "6625-svit-hyzhakiv.html": {
     "name": "Світ хижаків",
@@ -66158,15 +66185,6 @@
     "ashdi": "serial/3321",
     "tortuga": "embed/2175"
   },
-  "6067-perlyny-drakona-evolyuciya.html": {
-    "name": "Перлини дракона: Еволюція",
-    "eng_name": "Dragonball Evolution",
-    "year": "2009",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/58659",
-    "tortuga": "vod/49960"
-  },
   "3133-yak-my-provely-kanikuly-kanikuly-mriyi.html": {
     "name": "Як ми провели канікули / Канікули мрії",
     "eng_name": "What We Did on Our Holiday",
@@ -66175,6 +66193,15 @@
     "imdb_id": null,
     "ashdi": "vod/17970",
     "tortuga": "vod/33506"
+  },
+  "6067-perlyny-drakona-evolyuciya.html": {
+    "name": "Перлини дракона: Еволюція",
+    "eng_name": "Dragonball Evolution",
+    "year": "2009",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/58659",
+    "tortuga": "vod/49960"
   },
   "4237-porokhovyi-kokteil.html": {
     "name": "Пороховий коктейль",
@@ -66185,15 +66212,6 @@
     "ashdi": "vod/47688",
     "tortuga": "vod/68500"
   },
-  "7645-shukachi-poshuky.html": {
-    "name": "Шукачі / Пошуки",
-    "eng_name": "The Searchers",
-    "year": "1956",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/124311",
-    "tortuga": "vod/96394"
-  },
   "7328-nichlizhka.html": {
     "name": "Нічліжка",
     "eng_name": "Crash Pad",
@@ -66203,14 +66221,14 @@
     "ashdi": "vod/20904",
     "tortuga": "vod/77167"
   },
-  "1765-slozy-soncya.html": {
-    "name": "Сльози сонця",
-    "eng_name": "Tears of the Sun",
-    "year": "2003",
+  "7645-shukachi-poshuky.html": {
+    "name": "Шукачі / Пошуки",
+    "eng_name": "The Searchers",
+    "year": "1956",
     "kp_id": null,
     "imdb_id": null,
-    "ashdi": "vod/14239",
-    "tortuga": "vod/61321"
+    "ashdi": "vod/124311",
+    "tortuga": "vod/96394"
   },
   "6550-sercya-v-atlantydi.html": {
     "name": "Серця в Атлантиді",
@@ -66220,6 +66238,15 @@
     "imdb_id": null,
     "ashdi": "vod/92986",
     "tortuga": "vod/65337"
+  },
+  "1765-slozy-soncya.html": {
+    "name": "Сльози сонця",
+    "eng_name": "Tears of the Sun",
+    "year": "2003",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/14239",
+    "tortuga": "vod/61321"
   },
   "4891-v-oblozi.html": {
     "name": "В облозі",
@@ -66239,15 +66266,6 @@
     "ashdi": "vod/54156",
     "tortuga": "vod/31566"
   },
-  "7766-revansh.html": {
-    "name": "Реванш",
-    "eng_name": "Rematch",
-    "year": "2024",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "serial/4263",
-    "tortuga": null
-  },
   "5305-vidmak-koshmar-vovka.html": {
     "name": "Відьмак: Кошмар Вовка",
     "eng_name": "The Witcher: Nightmare of the Wolf",
@@ -66256,6 +66274,15 @@
     "imdb_id": null,
     "ashdi": "vod/48198",
     "tortuga": "vod/83277"
+  },
+  "7766-revansh.html": {
+    "name": "Реванш",
+    "eng_name": "Rematch",
+    "year": "2024",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "serial/4263",
+    "tortuga": null
   },
   "745-psyho.html": {
     "name": "Психо",
@@ -66293,15 +66320,6 @@
     "ashdi": "vod/15920",
     "tortuga": null
   },
-  "458-obitnycja-movchannja.html": {
-    "name": "Обітниця мовчання",
-    "eng_name": "Acts of Vengeance",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/14584",
-    "tortuga": null
-  },
   "6141-zhyty.html": {
     "name": "Жити",
     "eng_name": "Living",
@@ -66310,6 +66328,15 @@
     "imdb_id": null,
     "ashdi": "vod/90523",
     "tortuga": "vod/88743"
+  },
+  "458-obitnycja-movchannja.html": {
+    "name": "Обітниця мовчання",
+    "eng_name": "Acts of Vengeance",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/14584",
+    "tortuga": null
   },
   "6790-nich-nad-mangettenom.html": {
     "name": "Ніч над Мангеттеном",
@@ -66374,15 +66401,6 @@
     "ashdi": "vod/14332",
     "tortuga": "vod/34581"
   },
-  "5526-obvynuvacheni.html": {
-    "name": "Обвинувачені",
-    "eng_name": "Accused",
-    "year": "2023",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "serial/2266",
-    "tortuga": "embed/1820"
-  },
   "5243-vse-moye-zhyttya.html": {
     "name": "Все моє життя",
     "eng_name": "All My Life",
@@ -66391,6 +66409,15 @@
     "imdb_id": null,
     "ashdi": "vod/77773",
     "tortuga": "vod/82978"
+  },
+  "5526-obvynuvacheni.html": {
+    "name": "Обвинувачені",
+    "eng_name": "Accused",
+    "year": "2023",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "serial/2266",
+    "tortuga": "embed/1820"
   },
   "2019-eks-kohanec.html": {
     "name": "Екс - коханець",
@@ -66455,15 +66482,6 @@
     "ashdi": "vod/79574",
     "tortuga": "vod/84645"
   },
-  "5926-bezsmertni.html": {
-    "name": "Безсмертні",
-    "eng_name": "Tumbledown",
-    "year": "2015",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": null,
-    "tortuga": "vod/48129"
-  },
   "5540-briolin.html": {
     "name": "Бріолін",
     "eng_name": "Grease",
@@ -66472,6 +66490,15 @@
     "imdb_id": null,
     "ashdi": null,
     "tortuga": "vod/85027"
+  },
+  "5926-bezsmertni.html": {
+    "name": "Безсмертні",
+    "eng_name": "Tumbledown",
+    "year": "2015",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": null,
+    "tortuga": "vod/48129"
   },
   "7531-dzhentlmeny.html": {
     "name": "Джентльмени",
@@ -66545,15 +66572,6 @@
     "ashdi": "vod/46885",
     "tortuga": "vod/63051"
   },
-  "547-obdarovana.html": {
-    "name": "Обдарована",
-    "eng_name": "Gifted",
-    "year": "2017",
-    "kp_id": null,
-    "imdb_id": null,
-    "ashdi": "vod/6586",
-    "tortuga": "vod/5957"
-  },
   "6168-smert-na-pohoroni.html": {
     "name": "Смерть на похороні",
     "eng_name": "Death at a Funeral",
@@ -66562,6 +66580,15 @@
     "imdb_id": null,
     "ashdi": "vod/16627",
     "tortuga": "vod/52269"
+  },
+  "547-obdarovana.html": {
+    "name": "Обдарована",
+    "eng_name": "Gifted",
+    "year": "2017",
+    "kp_id": null,
+    "imdb_id": null,
+    "ashdi": "vod/6586",
+    "tortuga": "vod/5957"
   },
   "2865-zaneslo.html": {
     "name": "Занесло",
