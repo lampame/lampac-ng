@@ -27,14 +27,14 @@ namespace Spectre
         static CancellationTokenSource wscts;
         static DateTime lastreq;
         static Timer timer;
-        static string edge_hash, requestReferer, requestOrigin;
+        static string edge_hash, requestReferer;
         static int current_time = 0;
 
         static SpectreController()
         {
             timer = new Timer(_ =>
             {
-                if (ws != null && lastreq != default && DateTime.Now.AddMinutes(-20) > lastreq)
+                if (ws != null && lastreq != default && DateTime.Now.AddMinutes(-15) > lastreq)
                 {
                     try
                     {
@@ -88,7 +88,7 @@ namespace Spectre
                     e.requestMessage.Headers.TryAddWithoutValidation("Accept-Language", "ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5");
                     e.requestMessage.Headers.TryAddWithoutValidation("Accepts-Controls", edge_hash);
                     e.requestMessage.Headers.TryAddWithoutValidation("Authorizations", "Bearer pXzvbyDGLYyB6VkwsWZDv3iMKZtsXNzpzRyxZUcsKHXxsSeaYakbo3hw9mBFRc5VQTpqAX6BW8aDEqyLaHYcXSQiV6KHYTVTK6MYRphNAy5sBjtrevqkDzKmLqNdfMZGEU9NELjmtKfZy3RNGzCd767sNh1mXEj4tCcvqndHtzmwAbZNkhm4ghDEasodotMBewypNQ56uotJAQGX11csfeRfBAPk8DcUWWkkqzxca8vbnEw12vUFbBzT6hz8ZB3F3dzUhUXoL2cr1WM1bXQArRCS1MUNMz3X5WDMMQoZKxj2AMTRqp7QQX4dDB9B7VzEZTmyFULhm1AcHHMkoMvSVvKYoBoAKLycYAgMHeD4ECJcGEAGpnkJhrV57zQ7");
-                    e.requestMessage.Headers.TryAddWithoutValidation("Origin", requestOrigin);
+                    e.requestMessage.Headers.TryAddWithoutValidation("Origin", ModInit.conf.linkhost);
                     e.requestMessage.Headers.TryAddWithoutValidation("Sec-Fetch-Site", "cross-site");
                     e.requestMessage.Headers.TryAddWithoutValidation("Sec-Fetch-Mode", "cors");
                     e.requestMessage.Headers.TryAddWithoutValidation("Sec-Fetch-Dest", "empty");
@@ -568,45 +568,19 @@ namespace Spectre
 
                     try
                     {
-                        _ = ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
+                        _= ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
                         ws = null;
                     }
                     catch { }
                 }
 
                 string hls = null, wsUri = null;
-                TaskCompletionSource<bool> tcsWsUri = new();
 
                 using (var browser = new PlaywrightBrowser())
                 {
                     var page = await browser.NewPageAsync(init.plugin, proxy: proxy_data).ConfigureAwait(false);
                     if (page == null)
                         return default;
-
-                    page.WebSocket += (_, ws) =>
-                    {
-                        try
-                        {
-                            if (!string.IsNullOrEmpty(ws.Url) && ws.Url.Contains("?sid="))
-                            {
-                                wsUri = ws.Url;
-
-                                if (tcsWsUri.Task.IsCompleted)
-                                    tcsWsUri.SetResult(true);
-                            }
-                        }
-                        catch { }
-                    };
-
-                    page.Response += async (s, e) =>
-                    {
-                        if (e.Request.Method == "GET" && e.Url.Contains(".m3u8") && !browser.IsCompleted)
-                        {
-                            requestReferer = e.Request.Headers["referer"];
-                            requestOrigin = e.Request.Headers["origin"];
-                            browser.SetPageResult(e.Url);
-                        }
-                    };
 
                     await page.RouteAsync("**/*", async route =>
                     {
@@ -619,54 +593,20 @@ namespace Spectre
                                     Body = PlaywrightBase.IframeHtml(uri)
                                 });
                             }
-                            else if (route.Request.Url.Contains("/?token_movie="))
-                            {
-                                var fetchHeaders = route.Request.Headers;
-                                fetchHeaders.TryAdd("accept-encoding", "gzip, deflate, br, zstd");
-                                fetchHeaders.TryAdd("cache-control", "no-cache");
-                                fetchHeaders.TryAdd("pragma", "no-cache");
-                                fetchHeaders.TryAdd("sec-fetch-dest", "iframe");
-                                fetchHeaders.TryAdd("sec-fetch-mode", "navigate");
-                                fetchHeaders.TryAdd("sec-fetch-site", "cross-site");
-                                fetchHeaders.TryAdd("sec-fetch-storage-access", "active");
-
-                                var fetchResponse = await route.FetchAsync(new RouteFetchOptions
-                                {
-                                    Url = route.Request.Url,
-                                    Method = "GET",
-                                    Headers = fetchHeaders,
-                                }).ConfigureAwait(false);
-
-                                string body = await fetchResponse.TextAsync().ConfigureAwait(false);
-
-                                var injected = @"
-                                    <script>
-                                    (function() {
-                                        localStorage.setItem('allplay', '{""captionParam"":{""fontSize"":""100%"",""colorText"":""Белый"",""colorBackground"":""Черный"",""opacityText"":""100%"",""opacityBackground"":""75%"",""styleText"":""Без контура"",""weightText"":""Обычный текст""},""quality"":" + (init.m4s ? "2160" : "1080") + @",""volume"":0.5,""muted"":true,""label"":""(Russian) Forced"",""captions"":false}');
-                                    })();
-                                    </script>";
-
-                                await route.FulfillAsync(new RouteFulfillOptions
-                                {
-                                    Status = fetchResponse.Status,
-                                    Body = injected + body,
-                                    Headers = fetchResponse.Headers
-                                }).ConfigureAwait(false);
-                            }
                             else if (route.Request.Method == "POST" && route.Request.Url.Contains("/movies/"))
                             {
                                 string newUrl = Regex.Replace(route.Request.Url, "/[0-9]+$", $"/{id_file}");
 
                                 var fetchHeaders = route.Request.Headers;
-                                fetchHeaders.TryAdd("accept-encoding", "gzip, deflate, br, zstd");
-                                fetchHeaders.TryAdd("cache-control", "no-cache");
-                                fetchHeaders.TryAdd("dnt", "1");
-                                fetchHeaders.TryAdd("pragma", "no-cache");
-                                fetchHeaders.TryAdd("priority", "u=1, i");
-                                fetchHeaders.TryAdd("sec-fetch-dest", "empty");
-                                fetchHeaders.TryAdd("sec-fetch-mode", "cors");
-                                fetchHeaders.TryAdd("sec-fetch-site", "same-origin");
-                                fetchHeaders.TryAdd("sec-fetch-storage-access", "active");
+                                fetchHeaders.TryAdd("Accept-Encoding", "gzip, deflate, br, zstd");
+                                fetchHeaders.TryAdd("Cache-Control", "no-cache");
+                                fetchHeaders.TryAdd("DNT", "1");
+                                fetchHeaders.TryAdd("Pragma", "no-cache");
+                                fetchHeaders.TryAdd("Priority", "u=1, i");
+                                fetchHeaders.TryAdd("Sec-Fetch-Dest", "empty");
+                                fetchHeaders.TryAdd("Sec-Fetch-Mode", "cors");
+                                fetchHeaders.TryAdd("Sec-Fetch-Site", "same-origin");
+                                fetchHeaders.TryAdd("Sec-Fetch-Storage-access", "active");
 
                                 var fetchResponse = await route.FetchAsync(new RouteFetchOptions
                                 {
@@ -677,6 +617,31 @@ namespace Spectre
                                 }).ConfigureAwait(false);
 
                                 string json = await fetchResponse.TextAsync().ConfigureAwait(false);
+                                var jo = JsonConvert.DeserializeObject<JObject>(json);
+
+                                requestReferer = route.Request.Headers["referer"];
+                                //Console.WriteLine("\nReferer: " + requestReferer);
+
+                                wsUri = jo.Value<string>("pnr") + $"?sid={jo.Value<string>("pnk")}&v=2.1&t={DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()}";
+
+                                var selectedItem =
+                                    jo["hlsSource"]
+                                        .Children<JObject>()
+                                        .FirstOrDefault(x => (bool?)x["default"] == true)
+                                    ??
+                                    jo["hlsSource"]
+                                        .FirstOrDefault() as JObject;
+
+                                string rawUrl = selectedItem?["quality"]
+                                    .Children<JProperty>()
+                                    .Where(p => !(init.m4s && p.Name == "2160"))
+                                    .Select(p => (string)p.Value)
+                                    .FirstOrDefault(v => !string.IsNullOrWhiteSpace(v));
+
+                                browser.SetPageResult(rawUrl
+                                    .Split(new[] { " or " }, StringSplitOptions.RemoveEmptyEntries)
+                                    .FirstOrDefault()?
+                                    .Trim());
 
                                 await route.FulfillAsync(new RouteFulfillOptions
                                 {
@@ -687,7 +652,8 @@ namespace Spectre
                             }
                             else
                             {
-                                if (route.Request.Url.Contains("/stat") ||
+                                if (browser.IsCompleted ||
+                                    route.Request.Url.Contains("/stat") ||
                                     route.Request.Url.Contains("/lists.php") ||
                                     route.Request.Url.EndsWith(".cekh8i") ||
                                     route.Request.Url.EndsWith(".css") ||
@@ -707,21 +673,14 @@ namespace Spectre
                     PlaywrightBase.GotoAsync(page, "https://kinogo-go.tv/");
 
                     hls = await browser.WaitPageResult(15);
-
-                    if (wsUri == null && !string.IsNullOrEmpty(hls))
-                        await tcsWsUri.Task.WaitAsync(TimeSpan.FromSeconds(10));
                 }
 
                 if (string.IsNullOrEmpty(hls) || string.IsNullOrEmpty(wsUri))
                     return default;
 
-                Console.WriteLine("\n\nReferer: " + requestReferer);
-                Console.WriteLine("Origin: " + requestOrigin);
-
                 WebSocket(wsUri);
 
                 return hls;
-
             }
             catch
             {
@@ -737,7 +696,7 @@ namespace Spectre
             {
                 ws = new ClientWebSocket();
                 ws.Options.SetRequestHeader("User-Agent", Http.UserAgent);
-
+                
                 wscts = new CancellationTokenSource();
 
                 string resolution = init.m4s ? "2160" : "1080";

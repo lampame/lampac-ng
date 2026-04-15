@@ -41,8 +41,7 @@ namespace Spectre
         {
             conf = ModuleInvoke.Init("Spectre", new ModuleConf("Spectre", "https://api.apbugall.org", "https://aport-as.allarknow.online", "22c8122334d050de1bfc97bd08aa5e", "", true)
             {
-                enable = false,
-                m4s = false,
+                enable = true,
                 displayindex = 510,
                 streamproxy = true,
                 httpversion = 2,
