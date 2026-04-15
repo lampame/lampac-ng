@@ -246,14 +246,17 @@ namespace Shared.Services
 
         private static string NormalizeHeaderName(string key)
         {
-            if (key.Equals("Sec-CH-UA-Mobile", StringComparison.OrdinalIgnoreCase))
-                return "Sec-CH-UA-Mobile";
+            if (key.Equals("sec-ch-ua-mobile", StringComparison.OrdinalIgnoreCase))
+                return "sec-ch-ua-mobile";
 
-            if (key.Equals("Sec-CH-UA-Platform", StringComparison.OrdinalIgnoreCase))
-                return "Sec-CH-UA-Platform";
+            if (key.Equals("sec-ch-ua-platform", StringComparison.OrdinalIgnoreCase))
+                return "sec-ch-ua-platform";
 
-            if (key.Equals("Sec-CH-UA", StringComparison.OrdinalIgnoreCase))
-                return "Sec-CH-UA";
+            if (key.Equals("sec-ch-ua", StringComparison.OrdinalIgnoreCase))
+                return "sec-ch-ua";
+
+            if (key.Equals("DNT", StringComparison.OrdinalIgnoreCase))
+                return "DNT";
 
             return string.Create(key.Length, key, static (span, src) =>
             {

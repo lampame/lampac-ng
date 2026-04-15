@@ -15,6 +15,7 @@ using Shared.Services.Hybrid;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -85,6 +86,8 @@ namespace Core
 
             CultureInfo.CurrentCulture = new CultureInfo("ru-RU");
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+			
+            AppContext.SetSwitch("System.Net.Http.EnableActivityPropagation", false);
 
             var init = CoreInit.conf;
             var mods = init.BaseModule;
