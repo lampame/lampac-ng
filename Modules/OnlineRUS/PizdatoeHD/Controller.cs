@@ -29,7 +29,13 @@ namespace PizdatoeHD
                     host,
                     "lite/pizdatoehd",
                     init,
-                    streamfile => HostStreamProxy(streamfile)
+                    streamfile =>
+                    {
+                        if (init.cdn != null && !streamfile.Contains(".vtt"))
+                            return HostStreamProxy(Regex.Replace(streamfile, "https?://[^/]+", init.cdn));
+
+                        return HostStreamProxy(streamfile);
+                    }
                 );
             };
         }
@@ -44,51 +50,53 @@ namespace PizdatoeHD
             if (string.IsNullOrWhiteSpace(href) && string.IsNullOrWhiteSpace(title))
                 return OnError();
 
-            #region search
-            if (string.IsNullOrEmpty(href))
+            using (var browser = new PlaywrightBrowser(init.priorityBrowser))
             {
-                CacheResult<SearchModel> search;
+                IPage page = null;
 
-                string _kp = kinopoisk_id.ToString();
-                var dbEntry = ModInit.PizdatoeDb.Where(e => (imdb_id != null && e.Value.imdb == imdb_id) || e.Value.kp == _kp);
-                if (dbEntry.Any())
+                #region search
+                if (string.IsNullOrEmpty(href))
                 {
-                    var model = new SearchModel()
-                    {
-                        similar = new List<SimilarModel>()
-                    };
+                    CacheResult<SearchModel> search;
 
-                    foreach (var entry in dbEntry)
+                    string _kp = kinopoisk_id.ToString();
+                    var dbEntry = ModInit.PizdatoeDb.Where(e => (imdb_id != null && e.Value.imdb == imdb_id) || e.Value.kp == _kp);
+                    if (dbEntry.Any())
                     {
-                        model.similar.Add(new SimilarModel()
+                        var model = new SearchModel()
                         {
-                            title = entry.Value.title,
-                            year = entry.Value.year,
-                            href = entry.Value.href,
-                            img = entry.Value.img
-                        });
-                    }
+                            similar = new List<SimilarModel>()
+                        };
 
-                    if (model.similar.Count == 1)
-                        model.href = model.similar[0].href;
-
-                    search = new CacheResult<SearchModel>()
-                    {
-                        IsSuccess = true,
-                        Value = model
-                    };
-                }
-                else
-                {
-                    search = await InvokeCacheResult<SearchModel>($"pizdatoehd:search:{title}:{original_title}:{clarification}:{year}", 240, textJson: true, onget: async e =>
-                    {
-                        try
+                        foreach (var entry in dbEntry)
                         {
-                            string search_uri = $"{init.host}/search/?do=search&subaction=search&q={HttpUtility.UrlEncode(clarification == 1 ? title : (original_title ?? title))}";
-
-                            using (var browser = new PlaywrightBrowser(init.priorityBrowser))
+                            model.similar.Add(new SimilarModel()
                             {
-                                var page = await browser.NewPageAsync(init.plugin, init.headers, proxy: proxy_data, imitationHuman: true).ConfigureAwait(false);
+                                title = entry.Value.title,
+                                year = entry.Value.year,
+                                href = entry.Value.href,
+                                img = entry.Value.img
+                            });
+                        }
+
+                        if (model.similar.Count == 1)
+                            model.href = model.similar[0].href;
+
+                        search = new CacheResult<SearchModel>()
+                        {
+                            IsSuccess = true,
+                            Value = model
+                        };
+                    }
+                    else
+                    {
+                        search = await InvokeCacheResult<SearchModel>($"pizdatoehd:search:{title}:{original_title}:{clarification}:{year}", 240, textJson: true, onget: async e =>
+                        {
+                            try
+                            {
+                                string search_uri = $"{init.host}/search/?do=search&subaction=search&q={HttpUtility.UrlEncode(clarification == 1 ? title : (original_title ?? title))}";
+
+                                page = await browser.NewPageAsync(init.plugin, init.headers, proxy: proxy_data, imitationHuman: true).ConfigureAwait(false);
                                 if (page == null)
                                     return e.Fail("page");
 
@@ -116,68 +124,81 @@ namespace PizdatoeHD
                                 }
 
                                 return e.Success(content);
+
                             }
-                        }
-                        catch
-                        {
-                            return e.Fail("catch");
-                        }
-                    });
-                }
-
-                if (search.ErrorMsg != null)
-                    return ShowError(string.IsNullOrEmpty(search.ErrorMsg) ? "поиск не дал результатов" : search.ErrorMsg);
-
-                if (similar || string.IsNullOrEmpty(search.Value?.href))
-                {
-                    if (search.Value?.IsEmpty == true)
-                        return ShowError(search.Value.content ?? "поиск не дал результатов");
-
-                    return ContentTpl(search, () =>
-                    {
-                        if (search.Value.similar == null)
-                            return default;
-
-                        var stpl = new SimilarTpl(search.Value.similar.Count);
-                        string enc_title = HttpUtility.UrlEncode(title);
-                        string enc_original_title = HttpUtility.UrlEncode(original_title);
-
-                        foreach (var similar in search.Value.similar)
-                        {
-                            string link = $"{host}/lite/pizdatoehd?rjson={rjson}&title={enc_title}&original_title={enc_original_title}&href={HttpUtility.UrlEncode(similar.href)}";
-
-                            stpl.Append(similar.title, similar.year, string.Empty, link, PosterApi.Size(similar.img));
-                        }
-
-                        return stpl;
-                    });
-                }
-
-                href = search.Value.href;
-            }
-            #endregion
-
-            #region news
-            var cache = await InvokeCacheResult<RootObject>($"pizdatoehd:{href}", 15, async e =>
-            {
-                try
-                {
-                    using (var browser = new PlaywrightBrowser(init.priorityBrowser))
-                    {
-                        var page = await browser.NewPageAsync(init.plugin, init.headers, proxy: proxy_data, imitationHuman: true).ConfigureAwait(false);
-                        if (page == null)
-                            return e.Fail("page");
-
-                        var result = await page.GotoAsync($"{init.host}/{href}", new PageGotoOptions()
-                        {
-                            WaitUntil = WaitUntilState.DOMContentLoaded,
-                            Timeout = 10_000
+                            catch
+                            {
+                                return e.Fail("catch");
+                            }
                         });
+                    }
 
-                        if (result == null)
-                            return e.Fail("не удалось загрузить страницу", refresh_proxy: true);
+                    if (search.ErrorMsg != null)
+                        return ShowError(string.IsNullOrEmpty(search.ErrorMsg) ? "поиск не дал результатов" : search.ErrorMsg);
 
-                        string html = await result.TextAsync();
+                    if (similar || string.IsNullOrEmpty(search.Value?.href))
+                    {
+                        if (search.Value?.IsEmpty == true)
+                            return ShowError(search.Value.content ?? "поиск не дал результатов");
+
+                        return ContentTpl(search, () =>
+                        {
+                            if (search.Value.similar == null)
+                                return default;
+
+                            var stpl = new SimilarTpl(search.Value.similar.Count);
+                            string enc_title = HttpUtility.UrlEncode(title);
+                            string enc_original_title = HttpUtility.UrlEncode(original_title);
+
+                            foreach (var similar in search.Value.similar)
+                            {
+                                string link = $"{host}/lite/pizdatoehd?rjson={rjson}&title={enc_title}&original_title={enc_original_title}&href={HttpUtility.UrlEncode(similar.href)}";
+
+                                stpl.Append(similar.title, similar.year, string.Empty, link, PosterApi.Size(similar.img));
+                            }
+
+                            return stpl;
+                        });
+                    }
+
+                    href = search.Value.href;
+                }
+                #endregion
+
+                #region news
+                var cache = await InvokeCacheResult<RootObject>($"pizdatoehd:{href}", 15, async e =>
+                {
+                    try
+                    {
+                        string html = null;
+
+                        if (page != null && init.imitationHuman)
+                        {
+                            if (await GotoLinkAsync(page, href))
+                                html = await page.ContentAsync();
+                        }
+                        
+                        if (html == null || !html.Contains("b-sidecover"))
+                        {
+                            if (page == null)
+                            {
+                                page = await browser.NewPageAsync(init.plugin, init.headers, proxy: proxy_data, imitationHuman: true).ConfigureAwait(false);
+                                if (page == null)
+                                    return e.Fail("page");
+                            }
+
+                            var result = await page.GotoAsync($"{init.host}/{href}", new PageGotoOptions()
+                            {
+                                WaitUntil = WaitUntilState.DOMContentLoaded,
+                                Timeout = 10_000
+                            });
+
+                            if (result == null)
+                                return e.Fail("не удалось загрузить страницу", refresh_proxy: true);
+
+                            html = await result.TextAsync();
+                        }
+
                         if (string.IsNullOrEmpty(html))
                             return e.Fail("не удалось получить содержимое страницы");
 
@@ -187,20 +208,20 @@ namespace PizdatoeHD
 
                         return e.Success(content);
                     }
-                }
-                catch
-                {
-                    return e.Fail("catch");
-                }
-            });
-            #endregion
+                    catch
+                    {
+                        return e.Fail("catch");
+                    }
+                });
+                #endregion
 
-            if (cache.Value?.IsEmpty == true)
-                return ShowError(cache.Value.content);
+                if (cache.Value?.IsEmpty == true)
+                    return ShowError(cache.Value.content);
 
-            return ContentTpl(cache,
-                () => oninvk.Tpl(cache.Value, accsArgs(string.Empty), title, original_title, href, t, s, rjson)
-            );
+                return ContentTpl(cache,
+                    () => oninvk.Tpl(cache.Value, accsArgs(string.Empty), title, original_title, href, t, s, rjson)
+                );
+            }
         }
 
         #region Movie
@@ -310,6 +331,40 @@ namespace PizdatoeHD
                 return RedirectToPlay(result);
 
             return ContentTo(result);
+        }
+        #endregion
+
+        #region GotoLinkAsync
+        async public Task<bool> GotoLinkAsync(IPage page, string href)
+        {
+            try
+            {
+                var container = page.Locator("div.b-content__inline_item-link").Filter(new()
+                {
+                    Has = page.Locator($"a[href*='{href}']")
+                });
+
+                if (container == null || await container.CountAsync() != 1)
+                    return false;
+
+                var link = container.Locator("a");
+                if (link == null)
+                    return false;
+
+                await link.ClickAsync();
+
+                await page.WaitForURLAsync($"**/{href}", new PageWaitForURLOptions()
+                {
+                    WaitUntil = WaitUntilState.DOMContentLoaded,
+                    Timeout = 8_000
+                });
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         #endregion
     }

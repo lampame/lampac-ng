@@ -13,5 +13,7 @@ namespace PizdatoeHD
         public bool premium { get; set; }
 
         public bool imitationHuman { get; set; }
+
+        public string cdn { get; set; }
     }
 }

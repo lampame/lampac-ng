@@ -72,6 +72,7 @@ namespace PizdatoeHD
             conf = ModuleInvoke.Init("PizdatoeHD", new ModuleConf("pizdatoehd", "https://rezka.ag")
             {
                 kit = false,
+                imitationHuman = true,
                 displayindex = 331,
                 hls = true,
                 streamproxy = true,
@@ -92,7 +93,7 @@ namespace PizdatoeHD
         {
             return e.balanser switch
             {
-                "pizdatoehd" => " ~ 720p",
+                "pizdatoehd" => conf.premium ? " ~ 2160p" : " ~ 720p",
                 _ => null
             };
         }
